@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{% static 'images/hero.jpg' %}" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'images/hero-2.jpg' %}" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'images/hero-3.jpg' %}" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+</div>
 
 <div class="container my-3">
     <h1 align="center" class="font-weight-bold">Loja Virtual teste</h1>
@@ -20,4 +41,64 @@
     </p>
 </div>
 
+
+<p align="center">
+    <a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Link with href
+    </a>    
+</p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non porro temporibus, unde pariatur sit
+        doloremque molestiae fugit, nostrum, atque beatae praesentium vero deserunt aspernatur cumque culpa reiciendis
+        corrupti dolores!Illum ratione enim repellendus quas? Inventore at aut aliquid minus pariatur facilis id
+        adipisci consequuntur soluta doloremque. Sit quae quisquam quis molestiae similique esse natus atque saepe rem
+        placeat? Nostrum?
+    </div>
+</div>
+
+
+<footer class="bg-dark text-white">
+    <div class="container py-4">
+      <div class="row py-5">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <h6 class="text-uppercase mb-3">Customer services</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
+            <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
+            <li><a class="footer-link" href="#">Online Stores</a></li>
+            <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+          <h6 class="text-uppercase mb-3">Company</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer-link" href="#">What We Do</a></li>
+            <li><a class="footer-link" href="#">Available Services</a></li>
+            <li><a class="footer-link" href="#">Latest Posts</a></li>
+            <li><a class="footer-link" href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-uppercase mb-3">Social media</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer-link" href="#">Twitter</a></li>
+            <li><a class="footer-link" href="#">Instagram</a></li>
+            <li><a class="footer-link" href="#">Tumblr</a></li>
+            <li><a class="footer-link" href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="small text-muted mb-0">&copy; 2020 All rights reserved.</p>
+          </div>
+          <div class="col-lg-6 text-lg-right">
+            <p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="https://bootstraptemple.com/p/bootstrap-ecommerce">Bootstrap Temple</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 {% endblock content %}

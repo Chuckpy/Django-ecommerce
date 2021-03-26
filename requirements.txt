@@ -9,3 +9,4 @@ psycopg2==2.8.6
 pytest==6.1.2
 pytest-cov==2.10.1
 pytest-django==4.1.0
+django-widget-tweaks==1.4.8
