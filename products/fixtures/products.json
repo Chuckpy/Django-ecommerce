@@ -1,0 +1,412 @@
+[
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "created": "2020-11-29T19:48:50.913Z",
+            "modified": "2020-11-29T19:48:50.913Z",
+            "name": "Headsets",
+            "slug": "headsets"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "created": "2020-11-29T19:48:53.913Z",
+            "modified": "2020-11-29T19:48:53.913Z",
+            "name": "Mouses",
+            "slug": "mouses"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-1",
+            "image": "products/2020/11/29/mouse-1.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-2",
+            "image": "products/2020/11/29/mouse-2.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-3",
+            "image": "products/2020/11/29/mouse-3.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-4",
+            "image": "products/2020/11/29/mouse-4.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-5",
+            "image": "products/2020/11/29/mouse-5.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-6",
+            "image": "products/2020/11/29/mouse-6.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-7",
+            "image": "products/2020/11/29/mouse-7.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 11,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-8",
+            "image": "products/2020/11/29/mouse-8.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 12,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-9",
+            "image": "products/2020/11/29/mouse-9.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 13,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-10",
+            "image": "products/2020/11/29/mouse-10.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 14,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 3,
+            "name": "Mouse colorido maluco",
+            "slug": "mouse-colorido-maluco-11",
+            "image": "products/2020/11/29/mouse-11.jpg",
+            "description": "Mouse embrazado para mandar bala em geral",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 15,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-1",
+            "image": "products/2020/11/29/headset-1.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 16,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-2",
+            "image": "products/2020/11/29/headset-2.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 17,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-3",
+            "image": "products/2020/11/29/headset-3.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 19,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-4",
+            "image": "products/2020/11/29/headset-4.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 20,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-5",
+            "image": "products/2020/11/29/headset-5.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 21,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-6",
+            "image": "products/2020/11/29/headset-6.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 22,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-7",
+            "image": "products/2020/11/29/headset-7.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 23,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-8",
+            "image": "products/2020/11/29/headset-8.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 24,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-9",
+            "image": "products/2020/11/29/headset-9.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 25,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-10",
+            "image": "products/2020/11/29/headset-10.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 26,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-11",
+            "image": "products/2020/11/29/headset-11.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 27,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-12",
+            "image": "products/2020/11/29/headset-12.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 28,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-13",
+            "image": "products/2020/11/29/headset-13.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 29,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-14",
+            "image": "products/2020/11/29/headset-14.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 30,
+        "fields": {
+            "created": "2020-11-29T22:08:23.477Z",
+            "modified": "2020-11-29T22:08:23.477Z",
+            "category": 2,
+            "name": "Headset piruleta da balada",
+            "slug": "headset-piruleta-16",
+            "image": "products/2020/11/29/headset-15.jpg",
+            "description": "O headset tão embrazado que vai fazer você ouvir até o outro lado do mapa",
+            "price": "69.90",
+            "is_available": true
+        }
+    }
+]

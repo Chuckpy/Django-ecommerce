@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock title %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+            {% if product.image %}
+            <img class="container-fluid" src="/media/{{product.image}}" alt="">
+            {% else %}
+            <img class="card-img-top" src="{% static 'images/no_image.jpg' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="col-lg-9">
+            <h1 class="font-weight-bold">{{ product.name }}</h1>
+            <h2>R$ {{ product.price }}</h2>
+            <p>{{ product.description }}</p>
+            <p>
+                Voltar para o catálogo de
+                <a class="text-decoration-none" href="{{ product.category.get_absolute_url }}">
+                    {{ product.category.name }}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
