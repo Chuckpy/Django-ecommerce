@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 {% load static %}
+{% load product_tags %}
 
 <head>
     <meta charset="utf-8" />
@@ -33,7 +34,7 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">               
-            <li class="nav-item"><a class="nav-link" href={% url 'cart:detail' %}> <i class="fas fa-dolly-flatbed"></i> Carrinho<small class="text-gray">(0)</small></a></li>
+            <li class="nav-item"><a class="nav-link" href={% url 'cart:detail' %}> <i class="fas fa-dolly-flatbed"></i> Carrinho<small class="text-gray">(1{{ item.quantity }})</small></a></li>
             <li class="nav-item"><a class="nav-link" href="#"> <i class="far fa-heart mr-1"></i><small class="text-gray"> (0)</small></a></li>
             <li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
           </ul>
