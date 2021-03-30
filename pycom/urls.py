@@ -9,7 +9,8 @@ urlpatterns = [
     path("produtos/", include("products.urls")),
     path("carrinho/", include("cart.urls")),
     path("", include("pages.urls")),
-    path("orders/",include("orders.urls")),
+    path("orders/",include("orders.urls")),    
+    path("accounts/",include("allauth.urls")),
 
 ]
 

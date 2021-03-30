@@ -33,10 +33,16 @@
               <a class="nav-link" href="{% url 'pages:about' %}">Sobre nós</a>
             </li>
           </ul>
-          <ul class="navbar-nav ml-auto">               
+          <ul class="navbar-nav ml-auto">            
+            {% if user.is_authenticated %}    
+                     
             <li class="nav-item"><a class="nav-link" href={% url 'cart:detail' %}> <i class="fas fa-dolly-flatbed"></i> Carrinho<small class="text-gray">(1{{ item.quantity }})</small></a></li>
             <li class="nav-item"><a class="nav-link" href="#"> <i class="far fa-heart mr-1"></i><small class="text-gray"> (0)</small></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}"> <i class="fas fa-user-alt mr-1 text-gray"></i>Logout</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}"> <i class="fas fa-user-alt mr-1 text-gray"></i> Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}"> <i class="fas fa-user-plus"></i></i> Cadastro</a></li>
+            {% endif %}
           </ul>
            <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar">
