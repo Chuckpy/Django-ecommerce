@@ -33,5 +33,6 @@ Caso haja alguma duvida, ou precisar de ajuda, sinta-se livre para perguntar
 
 # Referências
 
-
+- [Fabio Ruicci Cursos](https://www.fabioruicci.com.br/)
+- [Python Crash Course](https://www.amazon.com.br/Python-Crash-Course-Eric-Matthes/dp/1593279280)
 - [Repostitório Cookiecutter Django](https://github.com/pydanny/cookiecutter-django)

@@ -8,3 +8,29 @@ body {
     background-color: #266fa0 !important;
     border-color: #1f1f1f !important;
 }
+
+.product-list-top h1 {
+    padding : 100px 100px;
+    background-color: #1f1f1f;
+}
+
+p { font-size: 1.4em;
+}
+
+
+.top-list {
+    margin: 70px 0px;
+    background-color: black;
+    color : white;
+    text-align: center;
+    padding: 5px 0px
+}
+
+.product-list { 
+    margin-top:200px;
+}
+
+.card-dt {
+    font-size: 1.1em;
+    color : #464646;
+}

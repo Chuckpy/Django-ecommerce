@@ -31,12 +31,14 @@
             </form>
             <p>
                 Voltar para o catálogo de
+                <button type="button" class="btn btn-outline-primary">
                 <a class="text-decoration-none" href="{{ product.category.get_absolute_url }}">
                     {{ product.category.name }}
-                </a>
+                </a></button>
             </p>
         </div>
     </div>
 </div>
+
 
 {% endblock content %}

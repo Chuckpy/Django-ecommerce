@@ -15,7 +15,9 @@ Produtos
 
 <div class="container my-3">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3">            
+            <h1 class="top-list">Loja Python</h1>
+            <h3>Categorias</h3>
             <ul class="list-group mb-3 mb-lg-0">
                 <a class="text-decoration-none list-group-item list-group-item-light {% if not category %}active{% endif %}"
                     href="{% url 'products:list' %}">
@@ -30,7 +32,8 @@ Produtos
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-lg-9">
+        
+        <div class="col-lg-9 product-list">
             <div class="card-deck mb-3">
                 {% for product in product_list %}
                 <div class="card">
@@ -69,6 +72,7 @@ Produtos
             {% include "pagination.html" with page=page_obj %}
             {% endif %}
         </div>
+        
     </div>
 </div>
 
