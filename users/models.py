@@ -3,5 +3,5 @@ from django.db import models
 
 class User(AbstractUser):
     pass
-    #bio = models.TextField(blank=True)
+    bio = models.TextField(blank=True)
      
