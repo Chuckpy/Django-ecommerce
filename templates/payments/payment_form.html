@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Pagamento com cartão de crédito{% endblock %}
+
+{% block content %}
+{% with total_price=order.get_total_price %}
+
+<div class="container my-3">
+    <h1 class="font-weight-bold">Pagamento com cartão de crédito</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <form action="." method="post" id="paymentForm">
+                <fieldset class="border-bottom mb-3">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="text" value="{{ order.email }}" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="docNumber">CPF</label>
+                        <input id="docNumber" name="doc_number" data-checkout="docNumber" type="text"
+                            value="{{ order.cpf }}" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cardholderName">Titular do cartão</label>
+                        <input id="cardholderName" data-checkout="cardholderName" type="text" class="form-control"
+                            value="{{ order.name }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Número do cartão</label>
+                        <input type="text" id="cardNumber" data-checkout="cardNumber" onselectstart="return false"
+                            oncopy="return false" oncut="return false" ondrag="return false" ondrop="return false"
+                            autocomplete=off class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-6 mb-0">
+                            <label for="">Data de vencimento</label>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <input type="text" placeholder="MM" id="cardExpirationMonth"
+                                        data-checkout="cardExpirationMonth" onselectstart="return false"
+                                        onpaste="return false" oncopy="return false" oncut="return false"
+                                        ondrag="return false" ondrop="return false" autocomplete=off
+                                        class="form-control" maxlength="2">
+                                </div>
+                                <div class="form-group col-6">
+                                    <input type="text" placeholder="YY" id="cardExpirationYear"
+                                        data-checkout="cardExpirationYear" onselectstart="return false"
+                                        onpaste="return false" oncopy="return false" oncut="return false"
+                                        ondrag="return false" ondrop="return false" autocomplete=off
+                                        class="form-control" maxlength="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="securityCode">Código de segurança</label>
+                            <input id="securityCode" data-checkout="securityCode" type="text"
+                                onselectstart="return false" onpaste="return false" oncopy="return false"
+                                oncut="return false" ondrag="return false" ondrop="return false" autocomplete=off
+                                class="form-control" maxlength="4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="installments">Parcelas</label>
+                        <select type="text" id="installments" name="installments" class="form-control"></select>
+                    </div>
+                </fieldset>
+                <div>
+                    <input type="hidden" id="docType" name="docType" data-checkout="docType" type="text"
+                        class="form-control" value="CPF" />
+                    <input type="hidden" name="payment_method_id" id="paymentMethodId" />
+                    <input type="hidden" name="transaction_amount" id="transactionAmount"
+                        value="{{ total_price|stringformat:'.2f' }}" />
+                    <input type="hidden" id="issuer" name="issuer" data-checkout="issuer" class="form-control" />
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Pagar</button>
+                    <br>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 bg-light p-4">
+                {% include "order_summary.html" with items=order.items.all total_price=total_price %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endwith %}
+{% endblock %}
+
+{% block script %}
+<script src="https://unpkg.com/imask@6.0.7/dist/imask.js"></script>
+<script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+<script>
+    window.Mercadopago.setPublishableKey("{{ publishable_key }}");
+</script>
+<script src="{% static 'js/process-payment.js' %}"></script>
+{% endblock script %}

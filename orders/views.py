@@ -1,5 +1,4 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import CreateView
 
@@ -25,8 +24,9 @@ class OrderCreateView(CreateView):
                     quantity=item["quantity"],
                 )
             cart.clear()
-            return render(self.request, "orders/order_created.html", {"order": order})
-        return HttpResponseRedirect(reverse("pages:home"))
+            self.request.session["order_id"] = order.id
+            return redirect(reverse("payments:process")) #O erro esta que o sistema não acha essa url
+        return redirect(reverse("pages:home"))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

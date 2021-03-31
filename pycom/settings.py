@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import environ 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,6 +34,7 @@ INSTALLED_APPS = [
     "products.apps.ProductsConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payments.apps.PaymentsConfig",
     #apps terceiros
     "widget_tweaks",
     "crispy_forms",
@@ -155,3 +158,11 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+# Mercado Pago
+
+env = environ.Env()
+env.read_env(str(BASE_DIR / ".env"))
+MERCADO_PAGO_PUBLIC_KEY = env("MERCADO_PAGO_PUBLIC_KEY")
+MERCADO_PAGO_ACCESS_TOKEN = env("MERCADO_PAGO_ACCESS_TOKEN")

@@ -13,3 +13,8 @@ django-widget-tweaks==1.4.8
 django-crispy-forms==1.11.0
 django-localflavor==3.0.1
 django-allauth == 0.44.0
+
+mercadopago==2.0.6
+django-environ==0.4.5
+pytest-mock==3.5.1
+requests==2.25.1
