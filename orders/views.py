@@ -25,7 +25,7 @@ class OrderCreateView(CreateView):
                 )
             cart.clear()
             self.request.session["order_id"] = order.id
-            return redirect(reverse("payments:process")) #O erro esta que o sistema não acha essa url
+            return redirect(reverse("payments:process")) #O erro esta 
         return redirect(reverse("pages:home"))
 
     def get_context_data(self, **kwargs):
