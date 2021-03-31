@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import CreateView
