@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import environ
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,19 +21,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',   
+    # apps django
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    # apps de terceiros
+    "widget_tweaks",
+    "crispy_forms",
+    "localflavor",
     # meus apps
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
     "products.apps.ProductsConfig",
     "cart.apps.CartConfig",
-    #apps terceiros
-    "widget_tweaks",
+    "orders.apps.OrdersConfig",
+    "payments.apps.PaymentsConfig",
 ]
 
 MIDDLEWARE = [
@@ -128,3 +135,14 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 CART_SESSION_ID = "cart"
 CART_ITEM_MAX_QUANTITY = 20
+
+# Crispy
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+# Mercado Pago
+
+env = environ.Env()
+env.read_env(str(BASE_DIR / ".env"))
+MERCADO_PAGO_PUBLIC_KEY = env("MERCADO_PAGO_PUBLIC_KEY")
+MERCADO_PAGO_ACCESS_TOKEN = env("MERCADO_PAGO_ACCESS_TOKEN")

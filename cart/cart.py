@@ -2,6 +2,7 @@ import copy
 from decimal import Decimal
 
 from django.conf import settings
+
 from products.models import Product
 
 from .forms import CartAddProductForm
@@ -63,6 +64,10 @@ class Cart:
         return sum(
             Decimal(item["price"]) * item["quantity"] for item in self.cart.values()
         )
+
+    def clear(self):
+        del self.session[settings.CART_SESSION_ID]
+        self.save()
 
     def save(self):
         self.session.modified = True

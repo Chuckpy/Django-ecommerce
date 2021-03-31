@@ -1,0 +1,14 @@
+<div class="card border-0 bg-light p-4">
+    <h4>Resumo do Pedido</h4>
+    <ul class="list-group list-group-flush">
+        {% for item in items %}
+        <li class="list-group-item bg-light">
+            {{ item.quantity }}x {{ item.product.name }}
+            <span class="float-right">R$ {{ item.total_price }}{{ item.get_total_price }}</span>
+        </li>
+        {% endfor %}
+        <li class="font-weight-bold list-group-item bg-light">Total
+            <span class="float-right">R$ {{ total_price }}</span>
+        </li>
+    </ul>
+</div>

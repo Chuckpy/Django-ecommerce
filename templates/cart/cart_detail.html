@@ -71,7 +71,7 @@
             Continuar comprando
         </a>
 
-        <a class="btn btn-success {% if not cart %}disabled{% endif %}" href="#">
+        <a class="btn btn-success {% if not cart %}disabled{% endif %}" href="{% url 'orders:create' %}">
             Finalizar compra
         </a>
     </p>

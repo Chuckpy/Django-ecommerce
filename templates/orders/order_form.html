@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Checkout{% endblock title %}
+
+{% block content %}
+
+<div class="container my-3">
+    <h1 class="font-weight-bold">Checkout</h1>
+    {% if cart %}
+    <div class="row">
+        <div class="col-lg-6">
+            {% crispy form %}
+        </div>
+        <div class="col-lg-6">
+            {% include "order_summary.html" with items=cart total_price=cart.get_total_price %}
+        </div>
+    </div>
+    {% else %}
+    <p>Seu carrinho está vazio.</p>
+    {% endif %}
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script src="https://unpkg.com/imask@6.0.7/dist/imask.js"></script>
+<script src="{% static 'js/order-form.js' %}"></script>
+{% endblock script %}
