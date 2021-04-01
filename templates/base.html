@@ -21,19 +21,15 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <a class="navbar-brand" href="{% url 'pages:home' %}">Python</a>
-      
+      <!-- Esquerda navegador-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item ">
-              <a class="nav-link" href="{% url 'pages:home' %}">Principal <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'products:list' %}">Produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'pages:about' %}">Sobre nós</a>
-            </li>
+            <li class="nav-item "><a class="nav-link" href="{% url 'pages:home' %}">Principal <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'products:list' %}">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}">Sobre nós</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}">Blog</a></li>
           </ul>
+      <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
             {% if user.is_authenticated %}    
             <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}"> Olá {{ user.first_name }} !</a></li>         

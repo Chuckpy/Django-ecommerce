@@ -11,7 +11,8 @@ urlpatterns = [
     path("", include("pages.urls")),
     path("orders/",include("orders.urls")),    
     path("accounts/",include("allauth.urls")),
-
+    path("payments/", include("payments.urls")),
+    path("blog/", include("blog.urls", namespace="blog")),
 ]
 
 if settings.DEBUG:

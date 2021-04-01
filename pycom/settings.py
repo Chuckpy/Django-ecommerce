@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     "products.apps.ProductsConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
-    "payments.apps.PaymentsConfig",
+    "payments.apps.PaymentsConfig",    
+    "blog.apps.BlogConfig",
     #apps terceiros
     "widget_tweaks",
     "crispy_forms",
@@ -149,6 +150,7 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
+
 SITE_ID = 1
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 LOGIN_REDIRECT_URL = "/"
