@@ -34,8 +34,8 @@
           </ul>
           <ul class="navbar-nav ml-auto">   
             
-            {% if user.is_authenticated %}     
-            <li>Olá {{ user.first_name }}</li>
+            {% if user.is_authenticated %}  
+            <li class="nav-item"><a class="nav-link" href="#">Olá {{ user.first_name }} !</a></li>  
             <li class="nav-item"><a class="nav-link" href={% url 'cart:detail' %}> <i class="fas fa-dolly-flatbed"></i> Carrinho<small class="text-gray">(0)</small></a></li>
             <li class="nav-item"><a class="nav-link" href="#"> <i class="far fa-heart mr-1"></i><small class="text-gray">(0)</small></a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}"> <i class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -47,7 +47,7 @@
           </ul>
            <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button>
           </form>
         </div>
       </nav>
