@@ -12,7 +12,7 @@ urlpatterns = [
     path("orders/",include("orders.urls")),    
     path("accounts/",include("allauth.urls")),
     path("payments/", include("payments.urls")),
-    path("blog/", include("blog.urls", namespace="blog")),
+    path("blog/", include("blog.urls")),
 ]
 
 if settings.DEBUG:
