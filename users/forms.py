@@ -11,3 +11,9 @@ class UserChangeForm(forms.UserChangeForm):
 class UserCreationForm(forms.UserCreationForm):
     class Meta(forms.UserCreationForm.Meta):
         model = User
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+                    ]

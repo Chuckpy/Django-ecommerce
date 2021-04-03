@@ -12,7 +12,8 @@ class Post(models.Model):
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    image = models.ImageField(null=True, blank=True, upload_to=upload_perfil_user,)
+    image = models.ImageField(null=True, blank=True, upload_to=upload_perfil_user)
+    favorite = models.IntegerField(null=True)
 
     class Meta:
         ordering = ("-created",)

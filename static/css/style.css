@@ -2,7 +2,7 @@ body {
     overflow-y: overlay !important;
     overflow-x: hidden;
     overflow-wrap: break-word;
-    background-image: url("dark-background.jpg");
+    background-image: url("light-background.jpg");
     background-repeat: repeat;
 }
 
@@ -17,15 +17,77 @@ body {
 }
 
 p { font-size: 1.4em;
-    color: white;
+    color: black;
 }
-h1 {
-    color:#858585;
+h1, h2, h3, h4,h5 {
+    color:#464647;
+}
+body.dark {
+    background-image: url("dark-background.jpg");
+}
+
+body.dark p {
+    color: #fff;
+}
+
+body.dark h1,h2,h3,h4,h5 {
+    color: #a1a1a1;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+    margin: 7px 20px;
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
+
+.op {
+    background-color:rgba(0, 0, 0, 0);
+
 }
 /*navegador*/
 .top-nav {
-    background-color: #131d22;
+    background-color: #202324;
 }
+
 
 
 /* lista produtos */
@@ -35,6 +97,11 @@ h1 {
     color : white;
     text-align: center;
     padding: 5px 0px
+}
+.price {
+    color : rgb(29, 136, 2);
+    text-shadow: #111;
+    
 }
 
 .product-list { 

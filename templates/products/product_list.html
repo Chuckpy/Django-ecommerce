@@ -15,10 +15,10 @@ Produtos
 
 <div class="container my-3">
     <div class="row">
-        <div class="col-lg-3">            
-            <h1 class="top-list">Loja Python</h1>
+        <div class="col-lg-3 op">            
+            <h1 class="top-list op">Loja Python</h1>
             <h3>Categorias</h3>
-            <ul class="list-group mb-3 mb-lg-0">
+            <ul class="list-group mb-3 mb-lg-0 op">
                 <a class="text-decoration-none list-group-item list-group-item-light {% if not category %}active{% endif %}"
                     href="{% url 'products:list' %}">
                     Todos os produtos
@@ -36,7 +36,7 @@ Produtos
         <div class="col-lg-9 product-list">
             <div class="card-deck mb-3">
                 {% for product in product_list %}
-                <div class="card">
+                <div class="card op">
                     <a href="{{ product.get_absolute_url }}">
                         {% if product.image %}
                         <img class="card-img-top" src="/media/{{product.image}}" alt="">
@@ -50,7 +50,7 @@ Produtos
                             <h5 class="card-title">{{ product.name }}</h5>
                         </a>
                         <a class="text-decoration-none text-dark" href="{{ product.get_absolute_url }}">
-                            <p class="card-text font-weight-bold">R$ {{ product.price }}</p>
+                            <p class="card-text font-weight-bold price">R$ {{ product.price }}</p>
                         </a>
                     </div>
                 </div>
@@ -61,10 +61,10 @@ Produtos
                 {% endfor %}
 
                 {% if product_list|length|remainder == 2 %}
-                <div class="card border-0"></div>
+                <div class="card border-0 op"></div>
                 {% elif product_list|length|remainder == 1 %}
-                <div class="card border-0"></div>
-                <div class="card border-0"></div>
+                <div class="card border-0 op"></div>
+                <div class="card border-0 op"></div>
                 {% endif %}
             </div>
 
