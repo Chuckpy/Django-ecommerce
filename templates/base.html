@@ -15,7 +15,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark top-nav">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" 
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,22 +31,39 @@
           </ul>
       <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
-            {% if user.is_authenticated %}    
-            <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}"> Olá {{ user.first_name }} !</a></li>         
-            <li class="nav-item"><a class="nav-link" href={% url 'cart:detail' %}> <i class="fas fa-dolly-flatbed"></i> Carrinho<small class="text-gray">
-              {% if item.quantity == 0 %} (0) {% else %} (1{{ item.quantity }})</small></a></li>
-              {% endif %}
-            <li class="nav-item"><a class="nav-link"  href="#"> <i class="far fa-heart mr-1"></i><small class="text-gray">(0)</small></a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-            {% else %}
+            {% if user.is_authenticated %}                
+            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_login' %}"> Olá {{ user.first_name }} !</a></li>         
+            <div class="btn-group espaco">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Loja
+              </button>
+              <div class="dropdown-menu">                
+                <a class="dropdown-item" href="{% url 'cart:detail' %}"><i class="fas fa-dolly-flatbed"></i> Carrinho (0)</a>
+                <a class="dropdown-item" href=""><i class="far fa-heart mr-1"></i>Favoritos (0)</a>
+                <a class="dropdown-item" href="#">Promoções</a>
+              </div>
+            </div>
+            <div class="btn-group espaco">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Posts
+              </button>
+              <div class="dropdown-menu">                
+                <a class="dropdown-item" href=""><i class="far fa-heart mr-1"></i>Favoritos (0)</a>
+                <a class="dropdown-item" href="#">Destaques</a>
+              </div>
+            </div>
+            <button class="btn btn-outline-danger espaco"> <i class="fas fa-power-off"></i></button>
+            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            {% else %}            
             <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}"> <i class="fas fa-user-alt mr-1 text-gray"></i> Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}"> <i class="fas fa-user-plus"></i></i> Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_signup' %}"><i class="fas fa-user-edit"></i> Cadastro</a></li>
+            <button class="btn btn-outline-danger espaco"> <i class="fas fa-power-off"></i></button>
             {% endif %}
           </ul>
-           <form class="form-inline my-2 my-lg-0">
+          <!-- Aqui esta a barra de pesquisa futura <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Pesquisar</button>
-          </form>
+          </form>-->
         </div>
       </nav>
       
