@@ -2,6 +2,8 @@ body {
     overflow-y: overlay !important;
     overflow-x: hidden;
     overflow-wrap: break-word;
+    background-image: url("dark-background.jpg");
+    background-repeat: repeat;
 }
 
 .active {
@@ -15,9 +17,18 @@ body {
 }
 
 p { font-size: 1.4em;
+    color: white;
+}
+h1 {
+    color:#858585;
+}
+/*navegador*/
+.top-nav {
+    background-color: #131d22;
 }
 
 
+/* lista produtos */
 .top-list {
     margin: 70px 0px;
     background-color: black;
@@ -30,17 +41,20 @@ p { font-size: 1.4em;
     margin-top:200px;
 }
 
+/*cards*/
 .card-dt {
     font-size: 1.1em;
     color : #464646;
 }
 
-.top-nav {
-    background-color: #353535;
-}
-
+/*espacamentos*/
 .espaco {
     margin-right: 10px;
 }
 
     
+/* footer */
+
+.li{
+    color:#fff;
+}
