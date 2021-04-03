@@ -22,14 +22,14 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'pages:home' %}">Python</a>
+          <a class="navbar-brand" href="{% url 'pages:home' %}">Hub</a>
       <!-- Esquerda navegador-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item "><a class="nav-link" href="{% url 'pages:home' %}">Principal <span class="sr-only">(current)</span></a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'products:list' %}">Produtos</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}">Sobre nós</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'blog:create' %}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}">Blog</a></li>
           </ul>
       <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
@@ -40,8 +40,9 @@
               <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Posts
               </button>
-              <div class="dropdown-menu">                
-                <a class="dropdown-item" href=""><i class="far fa-heart mr-1"></i>Favoritos (0)</a>
+              <div class="dropdown-menu">   
+                <a class="dropdown-item" href="">Criar Publicação</a>             
+                <a class="dropdown-item" href=""><i class="far fa-heart mr-1"></i>Favoritos (0)</a>                
                 <a class="dropdown-item" href="#">Destaques</a>
               </div>
             </div>

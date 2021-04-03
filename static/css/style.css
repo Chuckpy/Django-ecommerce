@@ -80,7 +80,7 @@ body.dark h1,h2,h3,h4,h5 {
 }
 
 .op {
-    background-color:rgba(0, 0, 0, 0);
+    background-color:rgba(0, 0, 0, 0.09);
 
 }
 /*navegador*/
@@ -114,6 +114,10 @@ body.dark h1,h2,h3,h4,h5 {
     color : #464646;
 }
 
+.cards {
+    width: 90%;
+}
+
 /*espacamentos*/
 .espaco {
     margin-right: 10px;
@@ -124,4 +128,37 @@ body.dark h1,h2,h3,h4,h5 {
 
 .li{
     color:#fff;
+}
+
+/* blog */
+
+.heart{
+    color: #ca3e3e;
+    
+}
+
+.titlep {
+    text-decoration:none;
+    color : #210699;
+}
+
+.post{
+    border-radius: 15px;
+    background-color: #d1d1d14f;
+    border: #111;
+    padding: 10px 10px;
+    margin: 25px 25px;   
+}
+.post-list{
+    border-radius: 15px;
+    background-color: #d1d1d14f;
+    border: #111;
+    padding: 10px 10px;
+    margin: 25px 25px;   
+}
+
+.post-img {
+    width: 70%;
+
+
 }

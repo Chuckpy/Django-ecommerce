@@ -1,11 +1,17 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
+<div class="container post">
+    <div class="col-9">
     <h2>{{ post.title }}</h2>
+    <img scr="{% static 'images/no_image.jpg'}">
+    <img class="" src="{% static 'images/hero.jpg' %}" alt="{{ post.title }}">
     <p class="date">
         Publicado em {{ post.created }} por {{ post.author }}
     </p>
     {{ post.body|linebreaks }}
+</div>
+</div>
 {% endblock %}
