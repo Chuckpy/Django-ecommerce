@@ -5,7 +5,7 @@
 {% block content %}
     {% for post in post_list %}
     <div class="post">
-        <article class= "container col-9">
+        <article class= "col-9">
             <div class="titlep">
             <h2>
                 <a href="{{ post.get_absolute_url }}">
@@ -13,21 +13,19 @@
                 </a>
             </h2>
             </div>
-            <img class="card-img-top post-img" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
-            {% if users.perfilUser %}
-                        <img src="{{ user.perfilUser.url }}" class="align-self-center" alt="Post"
-                            style="width: 18rem; border-radius: 220px;">
+            <a href="{{ post.get_absolute_url }}">   
+            <div class="">            
+            {% if users.image %}
+                        <img src="{{ users.image.url }}" class="align-self-center" alt="{{ post.title }}">                            
                         {% else %}
-                        <img src="{% static 'img/no_image.jpg' %}" class="" alt="Post"
-                            style="width: 18rem; border-radius: 220px;">
+                        <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="Post">
                         {% endif %}
-            <div>
-                {{ post.image }}
             </div>
+            </a>
             <p class="date">
                 Publicado em {{ post.created }} por {{ post.author }}
             </p>
-            {{ post.body|linebreaks|truncatewords:40 }}
+            {{ post.body|linebreaks|truncatewords:20 }}
         </article>
     </div>
     {% endfor %}

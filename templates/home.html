@@ -1,36 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<body>
+  
+<div class="d-block w-100">
+  <section>
+    <img src="{% static 'images/hero/night.png' %}" id="night"> 
+    <img src="{% static 'images/hero/lua.png' %}" id="lua">         
+    <img src="{% static 'images/hero/hub.png' %}" id="hub">            
+    <img src="{% static 'images/hero/git.png' %}" id="git">       
+    <img src="{% static 'images/hero/montanhas.png' %}" id="montanhas">       
+    <img src="{% static 'images/hero/disc.png' %}" id="disc">   
+    <img style="z-index:2 "src="{% static 'images/hero/forest.png' %}" id="forest">  
+  </section>
+  <script type="text/javascript">
+  let night = document.getElementById("night")
+  let lua = document.getElementById("lua")
+  let hub = document.getElementById("hub")
+  let montanhas = document.getElementById("montanhas")
+  let forest = document.getElementById("forest")
+  let git = document.getElementById("git")  
+  let disc = document.getElementById("disc")
 
-<!--Carrocel-->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="{% static 'images/hero.jpg' %}" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="{% static 'images/hero-2.jpg' %}" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="{% static 'images/hero-3.jpg' %}" alt="Third slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Próximo</span>
-      </a>
+  window.addEventListener('scroll', function(){
+    var value = window.scrollY;
+
+    hub.style.top = value * 0.46 + 'px';
+    night.style.top = value * -(0.9) + 'px';    
+    montanhas.style.top = value * -(0.55) + 'px';    
+    lua.style.left = value * -0.3 + 'px';
+    forest.style.top = value * -(0.4) + 'px';     
+    git.style.left = value * 1 + 'px'; 
+    disc.style.left = value * 1.5 + 'px'; 
+  })
+  
+  </script>
 </div>
-<!-- Fim Carrocel-->
+
 
 <!-- seção produtos teste -->
-<header class="text-center">
+<div class="text-center">
   <p class="small text-muted small text-uppercase mb-1">Coleções cuidadosa pensadas</p>
-  <h2 class="h5 text-uppercase mb-4">Navegue facilmente sobre as categorias</h2>
-</header>
+  <h1 class="h5 text-uppercase mb-4">Navegue facilmente sobre as categorias</h2>
+</div>
 <div class="container">
   <div class="row">
   <div class="col-sm">
@@ -120,6 +132,8 @@
     </div>
     </div>
 </div>
+</body>
+
 <footer class="bg-dark text-white">
     <div class="container py-4">
       <div class="row py-5">
@@ -127,8 +141,7 @@
           <h6 class="text-uppercase mb-3 h5">Serviços de consumidores</h6>
           <ul class="list-unstyled mb-0">
             <li><a class="text-decoration-none footer-link li h5" href="#">Ajuda &amp; Nos contate</a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="#">Returns &amp; Refunds</a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="#">Lojas online</a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="#">Loja online</a></li>
             <li><a class="text-decoration-none footer-link li h6" href="#">Temos &amp; Condições</a></li>
           </ul>
         </div>
@@ -143,9 +156,10 @@
         <div class="col-md-4">
           <h6 class="text-uppercase mb-3 h5">Midias sociais</h6>
           <ul class="list-unstyled mb-0">
-            <li><a class="text-decoration-none footer-link li h6" href="#">Twitter <i class="fab fa-twitter"></i></a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="#">Instagram <i class="fab fa-instagram"></i></a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="#">Github  <i class="fab fa-github"></i></a></li> 
+            <li><a class="text-decoration-none footer-link li h6" href="https://discord.gg/Xg6FcXGp7x">Discord <i class="fab fa-discord"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="https://www.instagram.com/hub.sciphi/">Twitter <i class="fab fa-twitter"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="https://twitter.com/hub_scientific">Instagram <i class="fab fa-instagram"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="https://github.com/Chuckpy">Github  <i class="fab fa-github"></i></a></li> 
           </ul>
         </div>
       </div>
@@ -155,7 +169,7 @@
             <p class="small text-muted mb-0">&copy; 2121 Todos os direitos reservados.</p>
           </div>
           <div class="col-lg-6 text-lg-right">
-            <p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="#">Bootstrap Temple</a></p>
+            <p class="small text-muted mb-0">Template criado em <a href="https://getbootstrap.com/">bootstrap</a> por <a class="text-white reset-anchor" href="https://github.com/Chuckpy">Marcus Vinicius</a></p>
           </div>
         </div>
       </div>
