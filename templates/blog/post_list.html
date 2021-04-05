@@ -14,9 +14,9 @@
             </h2>
             </div>
             <a href="{{ post.get_absolute_url }}">   
-            <div class="">            
-            {% if users.image %}
-                        <img src="{{ users.image.url }}" class="align-self-center" alt="{{ post.title }}">                            
+            <div class="post-img container">            
+            {% if post.image %}
+                        <img src="{{ post.image.url }}" class="align-self-center" alt="{{ post.title }}">                            
                         {% else %}
                         <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="Post">
                         {% endif %}
@@ -25,7 +25,7 @@
             <p class="date">
                 Publicado em {{ post.created }} por {{ post.author }}
             </p>
-            {{ post.body|linebreaks|truncatewords:20 }}
+            {{ post.body|linebreaks|truncatewords:15 }}
         </article>
     </div>
     {% endfor %}
