@@ -7,7 +7,7 @@
     <div class="col-9">
     <h2>{{ post.title }}</h2>
     <img scr="{% static 'images/no_image.jpg'}">
-    <img class="" src="{{ post.image.url }}" alt="{{ post.title }}">
+    <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="{{ post.title }}>
     <p class="date">
         Publicado em {{ post.created }} por {{ post.author }}
     </p>

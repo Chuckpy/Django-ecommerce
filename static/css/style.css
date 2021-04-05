@@ -21,10 +21,21 @@ body.dark p {
     color: rgb(211, 211, 211);
 }
 
-body.dark h1,h2,h3,h4,h5 {
+body.dark h1 {
     color: #9c9c9c;
 }
-
+body.dark h2 {
+    color: #9c9c9c;
+}
+body.dark h3 {
+    color: #9c9c9c;
+}
+body.dark h4 {
+    color: #9c9c9c;
+}
+body.dark h5 {
+    color: #9c9c9c;
+}
 .active {
     background-color: #266fa0 !important;
     border-color: #1f1f1f !important;
@@ -90,6 +101,10 @@ section img {
 
 
 /*navegador*/
+.espaco {
+    margin-right: 10px;
+}
+
 .top-nav {
     background-color: #161e20;
 }
@@ -120,6 +135,8 @@ section img {
 .label .ball {
 	background-color: #fff;
 	border-radius: 50%;
+    border-width: 1px;
+    border-color: #1f1f1f;
 	position: absolute;
 	top: 2px;
 	left: 2px;
@@ -145,8 +162,6 @@ section img {
 /* lista produtos */
 .top-list {
     margin: 70px 0px;
-    background-color: black;
-    color : white;
     text-align: center;
     padding: 5px 0px
 }
@@ -159,6 +174,9 @@ section img {
 .product-list { 
     margin-top:200px;
 }
+.lside {
+    margin-left: 40px
+}
 
 /*cards*/
 .card-dt {
@@ -170,10 +188,11 @@ section img {
     width: 100%;
 }
 
-/*espacamentos*/
-.espaco {
-    margin-right: 10px;
+.ptop {
+    margin-top: -100px;
 }
+
+/*espacamentos nav*/
 
     
 /* footer */
@@ -189,16 +208,17 @@ section img {
 }
 
 .titlep {
+    text-align: center;
+    font-size: 1.5em;
     text-decoration:none;
     color : #210699;
 }
 
 .post{
     width:66%;
-    border-radius: 15px;
-    background-color: #d1d1d14f;
-    border: #111;
-    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: #ffffff4f;
+    padding: 12px 18px;
     margin: 25px 25px;   
 }
 .post-detail{
@@ -220,6 +240,7 @@ section img {
 
 .post-img {
     width: 100%;
+    max-width: 100% ;
     border-radius: 7px;
 }
 
