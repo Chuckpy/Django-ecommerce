@@ -37,22 +37,22 @@
             <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_login' %}"> Olá {{ user.first_name }} !</a></li>         
             
             <div class="btn-group espaco">
-              <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Posts
               </button>
               <div class="dropdown-menu">   
                 <a class="dropdown-item" href="">Criar Publicação</a>             
-                <a class="dropdown-item" href=""><i class="far fa-heart mr-1"></i>Favoritos (0)</a>                
+                <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos (0)</a>                
                 <a class="dropdown-item" href="#">Destaques</a>
               </div>
             </div>
             <div class="btn-group espaco">
-              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Loja
               </button>
               <div class="dropdown-menu">                
                 <a class="dropdown-item" href="{% url 'cart:detail' %}"><i class="fas fa-dolly-flatbed"></i> Carrinho (0)</a>
-                <a class="dropdown-item" href=""><i class="far fa-heart mr-1"></i>Favoritos (0)</a>
+                <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos (0)</a>
                 <a class="dropdown-item" href="#">Promoções</a>
               </div>
             </div>
@@ -72,7 +72,7 @@
               <input type="checkbox" class="checkbox" id="chk" />
               <label class="label" for="chk">
                 <i class="fas fa-moon"></i>
-                <i class="fas fa-sun" style="color: white"></i>
+                <i class="fas fa-sun"></i>
                 <div class="ball"></div>
               </label>
             </div>

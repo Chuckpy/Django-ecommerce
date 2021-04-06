@@ -4,12 +4,20 @@
 
 {% block content %}
 <div class="post-detail">
-    <div class="col-9">
+    <div class="col-10">
+    <div>
     <h2>{{ post.title }}</h2>
-    <img scr="{% static 'images/no_image.jpg'}">
-    <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="{{ post.title }}>
+    </div>
+    <div class="post-img container">            
+        {% if post.image %}
+                    <img src="{{ post.image.url }}" class="post-img" alt="{{ post.title }}">                            
+                    {% else %}
+                    <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="Post">
+                    {% endif %}
+    </div>                           
     <p class="date">
-        Publicado em {{ post.created }} por {{ post.author }}
+        Publicado em {{ post.created }} por {{ post.author }}  
+        <i class="fas heart fa-heart"></i> {{ post.favorite }}
     </p>
     {{ post.body|linebreaks }}
 </div>

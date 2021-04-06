@@ -3,6 +3,7 @@
 {% block content %}
 <body>
   
+<!-- Banner -->
 <div class="d-block w-100">
   <section>
     <img src="{% static 'images/hero/night.png' %}" id="night"> 
@@ -26,7 +27,7 @@
     var value = window.scrollY;
 
     hub.style.top = value * 0.46 + 'px';
-    night.style.top = value * -(0.9) + 'px';    
+    night.style.top = value * -1.2 + 'px';    
     montanhas.style.top = value * -(0.55) + 'px';    
     lua.style.left = value * -0.3 + 'px';
     forest.style.top = value * -(0.4) + 'px';     
@@ -35,7 +36,6 @@
   })
   
   </script>
-</div>
 
 
 <!-- seção produtos teste -->

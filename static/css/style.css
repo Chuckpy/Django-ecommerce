@@ -186,15 +186,13 @@ section img {
 
 .cards {
     width: 100%;
+    padding: 5px 20px;
 }
 
 .ptop {
     margin-top: -100px;
 }
 
-/*espacamentos nav*/
-
-    
 /* footer */
 
 .li{
@@ -217,12 +215,12 @@ section img {
 .post{
     width:66%;
     border-radius: 10px;
-    background-color: #ffffff4f;
+    background-color: #ffffff33;
     padding: 12px 18px;
     margin: 25px 25px;   
 }
 .post-detail{
-    width:80%;
+    width:66%;
     border-radius: 15px;
     background-color: #d1d1d14f;
     border: #111;
@@ -248,3 +246,20 @@ section img {
     color: rgb(75, 75, 75);
     font-size: 0.9em;
 }
+
+
+/* accounts */
+
+.aclog {
+    position:absolute;
+    top:200px;
+    left:250px;
+    text-align: center;
+    padding:35px 20px;
+    width:50%;
+    align-items:center ;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;    
+    box-shadow: 10px 5px 15px rgba(29, 29, 29, 0.479);
+}
+
