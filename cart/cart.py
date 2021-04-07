@@ -70,3 +70,6 @@ class Cart:
         
     def save(self):
         self.session.modified = True
+
+    def total_itens(self):
+        return sum (item["quantity"] for item in self.cart)

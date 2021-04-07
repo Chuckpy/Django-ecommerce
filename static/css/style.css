@@ -14,7 +14,7 @@ body.dark {
     overflow-x: hidden;
     overflow-wrap: break-word;
     background-color: #222222; 
-    background-image: url("dark-background.jpg");
+    background-image: url("dark-background.png");
 }
 
 body.dark p {
@@ -36,6 +36,21 @@ body.dark h4 {
 body.dark h5 {
     color: #9c9c9c;
 }
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
 .active {
     background-color: #266fa0 !important;
     border-color: #1f1f1f !important;
@@ -72,7 +87,7 @@ section:before {
     bottom:0;
     width:100%;
     height:100px;
-    z-index: 1000000;
+    z-index: 1000;
 }
 section:after {
     content:'';
@@ -81,7 +96,7 @@ section:after {
     left:0;
     width:100%;
     height:100%;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 section img {
@@ -105,10 +120,16 @@ section img {
     margin-right: 10px;
 }
 
-.top-nav {
-    background-color: #161e20;
+.drop {
+    position: absolute;
+    z-index: 2000;
 }
-.top-nav.dark{
+
+.top-navg {
+    background-color: #2f5896;
+}
+
+body.dark .top-navg{
     background-color: #202324;
 }
 
@@ -157,6 +178,27 @@ section img {
 
 .fa-sun {
 	color: #f3b200;
+}
+/* discord card */
+
+.text-disc {
+    text-align: center;
+    text-decoration: none;
+}
+
+.tdisc{
+    position: relative;
+    z-index: 100000;
+    margin-top: -150px;
+    margin-bottom: 200px;
+}
+
+.card-disc {
+    display: block;
+    width:70%;
+    align-items: center;  
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* lista produtos */

@@ -10,9 +10,8 @@
     <img src="{% static 'images/hero/lua.png' %}" id="lua">         
     <img src="{% static 'images/hero/hub.png' %}" id="hub">            
     <img src="{% static 'images/hero/git.png' %}" id="git">       
-    <img src="{% static 'images/hero/montanhas.png' %}" id="montanhas">       
-    <img src="{% static 'images/hero/disc.png' %}" id="disc">   
-    <img style="z-index:2 "src="{% static 'images/hero/forest.png' %}" id="forest">  
+    <img src="{% static 'images/hero/montanhas.png' %}" id="montanhas">   
+    <img style="z-index:200000 "src="{% static 'images/hero/forest.png' %}" id="forest">  
   </section>
   <script type="text/javascript">
   let night = document.getElementById("night")
@@ -21,28 +20,35 @@
   let montanhas = document.getElementById("montanhas")
   let forest = document.getElementById("forest")
   let git = document.getElementById("git")  
-  let disc = document.getElementById("disc")
 
   window.addEventListener('scroll', function(){
     var value = window.scrollY;
 
-    hub.style.top = value * 0.46 + 'px';
-    night.style.top = value * -1.2 + 'px';    
-    montanhas.style.top = value * -(0.55) + 'px';    
-    lua.style.left = value * -0.3 + 'px';
-    forest.style.top = value * -(0.4) + 'px';     
-    git.style.left = value * 1 + 'px'; 
-    disc.style.left = value * 1.5 + 'px'; 
+    hub.style.top = value * 0.45 + 'px';
+    night.style.top = value * -1.6 + 'px';    
+    montanhas.style.top = value * -(0.6) + 'px';    
+    lua.style.left = value * -0.6 + 'px';
+    forest.style.top = value * -(0.45) + 'px';     
+    git.style.top = value * 0.5 + 'px'; 
+    disc.style.top = value * 0.05 + 'px'; 
   })
   
   </script>
+
+
+<div class="container tdisc">
+  <a href="https://discord.gg/Xg6FcXGp7x">
+  <h2 class="text-disc"> Venha conhecer nosso servidor</h2>
+  <img class="card-disc" src="{% static 'images/discord-logo.png' %}" alt="Discord">
+  </a>
+</div>
 
 
 <!-- seção produtos teste -->
 <div class="ptop">
 <div class="text-center">
   <p class="text-uppercase mb-1">Saiba sobre o que estão falando hoje</p>
-  <h1 class="h5 text-uppercase mb-4">Navegue facilmente sobre as categorias</h2>
+  <h1 class="h5 text-uppercase mb-4">Principais publicações :</h2>
 </div>
 <div class="d-flex w-100">
   <div class="row">
@@ -50,7 +56,7 @@
   <div class="card op cards">       
   <img class="card-img-top" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
   <div class="card-body ">
-    <h5 class="card-title">Produto 1</h5>
+    <h5 class="card-title">Post 1</h5>
     <p class="card-text card-dt">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
   </div>  
   <div class="btn-group" role="group" aria-label="Basic example">
@@ -63,7 +69,7 @@
       <div class="card op cards">
         <img class="card-img-top" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
         <div class="card-body">
-          <h5 class="card-title">Produto 2</h5>
+          <h5 class="card-title">Post 2</h5>
           <p class="card-text card-dt">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -76,7 +82,7 @@
       <div class="card op cards" >
         <img class="card-img-top" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
         <div class="card-body">
-          <h5 class="card-title">Produto 3</h5>
+          <h5 class="card-title">Post 3</h5>
           <p class="card-text card-dt">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -90,49 +96,27 @@
 </div>
 
 
+
 <div class="container my-3">
-    <h1 align="center" class="font-weight-bold">Loja Virtual</h1>
+    <h1 align="center" class="font-weight-bold">Sobre o hub</h1>
     <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur autem beatae saepe at nulla accusamus,
-        mollitia quibusdam laborum, voluptatem corporis molestiae ipsa, id quasi distinctio deserunt et. Ipsam, dolorem
-        quidem.Itaque, magnam explicabo! Corrupti eos optio repellat debitis omnis voluptates laudantium fuga dolore
-        incidunt autem. Veritatis harum sunt eveniet sequi, impedit quaerat modi assumenda recusandae molestias adipisci
-        laborum cumque ad.
+      A busca pelo conhecimento é nosso âmago; contemplamos a aurora da busca do saber,
+       é o alvor de um mundo crítico, estão presentes prodigiosos, acadêmicos e iniciantes
+        na odisseia do conhecer, tendo em vista que compartilham o mesmo particípio solene:
+        o lampejo da amizade pela sabedoria. A dialética neste servidor goza da diferença
+        nas opiniões, principalmente nos debates e na política, que asseguramos sempre o
+        respeito e a educação. Sobretudo, o que mais podemos dizer é que no HCF, temos
+        rigor em priorização da ética e dos bons costumes, todo conhecimento será 
+        partilhado com gentileza. Cada pensamento, cada reflexão ilustra uma arte,
+        que representa todo nosso apreço, devido a isso, estão todos convidados, do 
+        que estão esperando? Afinal, este servidor é o reflexo do que os amantes das
+        ciências e filosofias sempre quiseram para esta plataforma. Este servidor 
+        jaz-te, junte-se ao dilúculo da criticidade!
     </p>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non porro temporibus, unde pariatur sit
-        doloremque molestiae fugit, nostrum, atque beatae praesentium vero deserunt aspernatur cumque culpa reiciendis
-        corrupti dolores!Illum ratione enim repellendus quas? Inventore at aut aliquid minus pariatur facilis id
-        adipisci consequuntur soluta doloremque. Sit quae quisquam quis molestiae similique esse natus atque saepe rem
-        placeat? Nostrum?
-    </p>
+    
 </div>
 
-<p align="center">
-    <a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      Link com referência
-    </a>    
-</p>
-  <div class="collapse" id="collapseExample">
-    <div class="card card-body op">
-      <div class="card-element">
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non porro temporibus, unde pariatur sit
-        doloremque molestiae fugit, nostrum, atque beatae praesentium vero deserunt aspernatur cumque culpa reiciendis
-        corrupti dolores!Illum ratione enim repellendus quas? Inventore at aut aliquid minus pariatur facilis id
-        adipisci consequuntur soluta doloremque. Sit quae quisquam quis molestiae similique esse natus atque saepe rem
-        placeat? Nostrum?
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non porro temporibus, unde pariatur sit
-      doloremque molestiae fugit, nostrum, atque beatae praesentium vero deserunt aspernatur cumque culpa reiciendis
-      corrupti dolores!Illum ratione enim repellendus quas? Inventore at aut aliquid minus pariatur facilis id
-      adipisci consequuntur soluta doloremque. Sit quae quisquam quis molestiae similique esse natus atque saepe rem
-      placeat? Nostrum?
-    </p>
-    </div>
-    </div>
-</div>
+
 </body>
 
 <footer class="bg-dark text-white">
@@ -157,10 +141,10 @@
         <div class="col-md-4">
           <h6 class="text-uppercase mb-3 h5">Midias sociais</h6>
           <ul class="list-unstyled mb-0">
-            <li><a class="text-decoration-none footer-link li h6" href="https://discord.gg/Xg6FcXGp7x">Discord <i class="fab fa-discord"></i></a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="https://www.instagram.com/hub.sciphi/">Twitter <i class="fab fa-twitter"></i></a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="https://twitter.com/hub_scientific">Instagram <i class="fab fa-instagram"></i></a></li>
-            <li><a class="text-decoration-none footer-link li h6" href="https://github.com/Chuckpy">Github  <i class="fab fa-github"></i></a></li> 
+            <li><a class="text-decoration-none footer-link li h6" href="https://discord.gg/Xg6FcXGp7x">Discord <i class="fab fa-discord" style="font-size: 1.5em"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="https://www.instagram.com/hub.sciphi/">Twitter <i class="fab fa-twitter" style="font-size: 1.5em"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="https://twitter.com/hub_scientific">Instagram <i class="fab fa-instagram" style="font-size: 1.5em"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="https://github.com/Chuckpy">Github  <i class="fab fa-github" style="font-size: 1.5em"></i></a></li> 
           </ul>
         </div>
       </div>

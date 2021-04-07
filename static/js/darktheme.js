@@ -1,7 +1,8 @@
-const chk = document.getElementById('chk');
+const chk = document.getElementById('chk'); 
 
 chk.addEventListener('change', () => {
-	document.body.classList.toggle('dark');
+	document.body.classList.toggle('dark');   
+    save()    
 });
 
 function save() {	
@@ -9,7 +10,6 @@ function save() {
     localStorage.setItem("chk", checkbox.checked);	
 }
 
-//for loading
-var checked = JSON.parse(localStorage.getItem("chk"));
-    document.getElementById("chk").checked = checked;
-
+if (JSON.parse(localStorage.getItem("chk"))){
+        document.getElementById("chk").click()           
+        }

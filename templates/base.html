@@ -17,7 +17,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">    
-    <nav class="navbar navbar-expand-lg navbar-dark top-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark top-navg">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" 
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Posts
               </button>
-              <div class="dropdown-menu">   
+              <div class="dropdown-menu drop">   
                 <a class="dropdown-item" href="">Criar Publicação</a>             
                 <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos (0)</a>                
                 <a class="dropdown-item" href="#">Destaques</a>
@@ -50,8 +50,18 @@
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Loja
               </button>
-              <div class="dropdown-menu">                
-                <a class="dropdown-item" href="{% url 'cart:detail' %}"><i class="fas fa-dolly-flatbed"></i> Carrinho (0)</a>
+              <div class="dropdown-menu drop" >                
+                <a class="dropdown-item" href="{% url 'cart:detail' %}"><i class="fas fa-dolly-flatbed"></i> 
+                  Carrinho 
+                    {% with total_itens=cart|length %}
+                    {% if total_itens > 0 %}
+                    ({{ total_itens }})
+                    {% else %}
+                    (0)
+                    {% endif %}
+                    {% endwith %}
+                  
+                </a>
                 <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos (0)</a>
                 <a class="dropdown-item" href="#">Promoções</a>
               </div>
@@ -78,7 +88,8 @@
             </div>
             {% endif %}
           </ul>
-          <!-- Aqui esta a barra de pesquisa futura <form class="form-inline my-2 my-lg-0">
+          <!-- Aqui esta a barra de pesquisa futura
+            <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Pesquisar</button>
           </form>-->
