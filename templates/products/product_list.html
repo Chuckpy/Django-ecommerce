@@ -33,10 +33,10 @@ Produtos
             </ul>
         </div>
         
-        <div class="col-lg-9 product-list">
+        <div class="col-lg-9 ">
             <div class="card-deck mb-3">
                 {% for product in product_list %}
-                <div class="card op">
+                <div class="card op product-list">
                     <a href="{{ product.get_absolute_url }}">
                         {% if product.image %}
                         <img class="card-img-top" src="/media/{{product.image}}" alt="">

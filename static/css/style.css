@@ -202,6 +202,15 @@ body.dark .top-navg{
 }
 
 /* lista produtos */
+
+
+.prod-dt{
+    border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;    
+    border-image-source: linear-gradient(to left, #3405b4, #c20d61);
+    border-radius: 20px 0px 19px 0px;
+}
 .top-list {
     margin: 70px 0px;
     text-align: center;
@@ -214,9 +223,13 @@ body.dark .top-navg{
 }
 
 .product-list { 
-    margin-top:200px;
+    margin-top:50px;
+    border: 6px solid #4407b6;
+    border-image-slice: 1;    
+     border-image-source: linear-gradient(to left, #3405b4, #c20d61);
+    border-radius: 10px;   
 }
-.lside {
+.lside {    
     margin-left: 40px
 }
 
