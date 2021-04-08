@@ -22,4 +22,24 @@
     {{ post.body|linebreaks }}
 </div>
 </div>
+
+{% for comment in post.comment_set.all %}
+<div class="cpub">    
+    <h2 class="ctitle">Comentários:</h2>
+    <div class="ccom">    
+    <div>
+        <h5>
+            {{ comment.author }} comentou : 
+        </h5>
+        <p>
+            {{ comment.body }}
+        </p>
+        
+        <p class="date">
+            Comentário feito em {{ comment.created }} por {{ comment.author }}
+        </p>
+    </div>    
+</div>    
+</div>
+{% endfor %} 
 {% endblock %}

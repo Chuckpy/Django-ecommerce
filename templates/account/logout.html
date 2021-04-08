@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="aclog">
-    <h2>Sair</h2>
+    <h2 class="actitle">Sair</h2>
     <p>Você tem certeza que deseja sair?</p>
     <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}

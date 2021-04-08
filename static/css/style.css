@@ -202,12 +202,28 @@ body.dark .top-navg{
 }
 
 /* lista produtos */
-
+.pagn{
+    font-size: 1.4em;
+    margin: 25px 25px;
+    color: #1f1f1f;
+}
+body.dark .pagn{
+    font-size: 1.4em;
+    margin: 25px 25px;
+    color: #f1f1f1;
+}
 
 .prod-dt{
     border-width: 5px;
     border-style: solid;
-    border-image-slice: 1;    
+    border-image-slice: 1;        
+    border-image-source: linear-gradient(to left, #10a510, #b0dd0d);
+    border-radius: 20px 0px 19px 0px;
+}
+body.dark .prod-dt{
+    border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;        
     border-image-source: linear-gradient(to left, #3405b4, #c20d61);
     border-radius: 20px 0px 19px 0px;
 }
@@ -223,6 +239,13 @@ body.dark .top-navg{
 }
 
 .product-list { 
+    margin-top:50px;
+    border: 6px solid #4407b6;
+    border-image-slice: 1;    
+    border-image-source: linear-gradient(to left, #10a510, #b0dd0d);
+    border-radius: 10px;   
+}
+body.dark .product-list { 
     margin-top:50px;
     border: 6px solid #4407b6;
     border-image-slice: 1;    
@@ -255,9 +278,79 @@ body.dark .top-navg{
 }
 
 /* blog */
+.bcreate{    
+    position:absolute;
+    top:0px;
+    left:200px;
+    color:black;
+    padding:45px 60px;
+    width:50%;
+    align-items:center ;
+    border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;        
+    border-image-source: linear-gradient(to left, #10a510, #b0dd0d);
+    border-radius: 20px 0px 19px 0px;  
+    margin:100px 100px;
+    padding: 25px 25px;
+    background-color:#fff;
+}
+
+body.dark .bcreate{    
+    position:absolute;
+    top:0px;
+    left:200px;
+    color:black;
+    padding:45px 60px;
+    width:50%;
+    align-items:center ;
+    border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;        
+    border-image-source: linear-gradient(to left, #3405b4, #c20d61);
+    border-radius: 20px 0px 19px 0px;  
+    margin:100px 100px;
+    padding: 25px 25px;
+    background-color:#fff;
+}
+.bform{
+    margin-bottom: 25px;
+
+}
 .heart{
     color: #ca3e3e;
+    font-size: 1.5em;
     
+}
+.post-fav{
+    padding: 5px 5px;
+
+
+}
+.letter{
+    color: #fff;
+    font-size: 1.5em;
+}
+.ctitle {
+    text-align: center;    
+}
+
+.ccom{
+    width:30%;
+    border-radius: 10px;
+    background-color: #ffffff23;
+    border-bottom: 5px inset #9b37dd;
+    padding: 12px 18px;
+    margin: 25px 25px; 
+
+}
+.cpub{    
+    width:90%;
+    border-radius: 10px;
+    background-color: #ffffff23;
+    border-bottom: 5px inset #9b37dd;
+    padding: 12px 18px;
+    margin: 25px 25px;  
 }
 
 .titlep {
@@ -270,7 +363,8 @@ body.dark .top-navg{
 .post{
     width:66%;
     border-radius: 10px;
-    background-color: #ffffff33;
+    background-color: #ffffff23;
+    border-bottom: 5px inset #9b37dd;
     padding: 12px 18px;
     margin: 25px 25px;   
 }
@@ -281,6 +375,7 @@ body.dark .top-navg{
     border: #111;
     padding: 10px 10px;
     margin: 25px 25px;  
+    border-bottom: 5px inset #9b37dd;
 
 }
 .post-list{
@@ -299,22 +394,29 @@ body.dark .top-navg{
 
 .date {
     color: rgb(75, 75, 75);
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 
 /* accounts */
+.actitle{
+    text-align: center;
+    font-size:2.3em;
+    color: #111;
+
+}
 
 .aclog {
     position:absolute;
-    top:200px;
-    left:250px;
-    text-align: center;
-    padding:35px 20px;
+    top:0px;
+    left:200px;
+    color:black;
+    padding:45px 60px;
     width:50%;
     align-items:center ;
     background-color: rgb(255, 255, 255);
     border-radius: 7px;    
     box-shadow: 10px 5px 15px rgba(29, 29, 29, 0.479);
+    margin:100px 100px;
 }
 

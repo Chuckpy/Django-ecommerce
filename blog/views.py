@@ -1,8 +1,8 @@
 from django.views.generic import DetailView, ListView,CreateView
 
-from .models import Post
+from .models import Post, Comment
 
-from django.urls import reverse
+from .forms import CreatePostForm
 
 class PostListView(ListView):
     model = Post
@@ -13,8 +13,9 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = Post
-    fields=[
-        "title",
-        "body",
-        "image",
-    ]
+    form_class = CreatePostForm
+
+
+class CommentListView(ListView):
+    model = Comment
+

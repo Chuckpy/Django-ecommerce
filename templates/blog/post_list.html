@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{% endblock %}
-
 {% block content %}
     {% for post in post_list %}
     <div class="post">
@@ -9,7 +8,7 @@
             <div class="titlep">
             <h2 class = "titlep">
                 <a href="{{ post.get_absolute_url }}">
-                    {{ post.title }}  <i class="fas heart fa-heart"></i> {{ post.favorite }}
+                    {{ post.title }}  
                 </a>
             </h2>
             </div>
@@ -21,12 +20,18 @@
                         <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="Post">
                         {% endif %}
             </div>
-            </a>
-            <p class="date">
-                Publicado em {{ post.created }} por {{ post.author }}
-            </p>
+        </a><p class="date">
+            Publicado em {{ post.created }} por {{ post.author }}
+            </p>                       
             {{ post.body|linebreaks|truncatewords:15 }}
+            <div class="post-fav">
+                <p>
+                Favoritos <i class="fas heart fa-heart"></i>  ( {{ post.favorite }} )  
+                     Comentários <i class="fas fa-comment letter"></i> ( {{ post.comment_number }} )
+                </p>    
+            </div>            
         </article>
     </div>
     {% endfor %}
+    
 {% endblock %}

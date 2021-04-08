@@ -1,27 +1,23 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
 
-from .forms import UserCreationForm
-from .models import User
+from django.contrib.auth import login, authenticate
 
-class CreateUser(TemplateView):
-    template_name="cadastro.html"
-    form_class = UserCreationForm
+from .forms import CriarFormUser
 
-    def post(self, request):
-        data = {}
-        data["email"] = request.POST ["email"]
-        data["first_name"] = request.POST["first_name"]
-        data["last_name"] = request.POST["last_name"]
-        data["password"] = request.POST["password"]
-
-        user = User.objects.create(
-            email=data["email"],
-            first_name=data["first_name"],
-            last_name=data["last_name"],
-            password=data["password"],
-        )
-
-        data["user_obj"]=user_obj
-
-        return render(request, "cadastro.html")
+def cadastro(request):
+    context={}
+    if request.POST:
+        form = CriarFormUser(request.POST)
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data.get('email')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(email=email, password1='raw_password')
+            login(request, user)
+            return redirect('home')
+        else :
+            context['registration_form'] = form
+    else:
+        form = CriarFormUser()
+        context['registration_form'] = form 
+    return render(request, 'accounts/cadastro.html', context)

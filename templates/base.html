@@ -34,15 +34,15 @@
       <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
             {% if user.is_authenticated %}                
-            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_login' %}"> Olá {{ user.first_name }} !</a></li>         
+            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_login' %}"> Olá {{ user.username }} !</a></li>         
             
             <div class="btn-group espaco">
               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Posts
               </button>
               <div class="dropdown-menu drop">   
-                <a class="dropdown-item" href="">Criar Publicação</a>             
-                <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos (0)</a>                
+                <a class="dropdown-item" href="{% url 'blog:create' %}">Criar Publicação</a>             
+                <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos</a>                
                 <a class="dropdown-item" href="#">Destaques</a>
               </div>
             </div>
@@ -62,7 +62,7 @@
                     {% endwith %}
                   
                 </a>
-                <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos (0)</a>
+                <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos</a>
                 <a class="dropdown-item" href="#">Promoções</a>
               </div>
             </div>
