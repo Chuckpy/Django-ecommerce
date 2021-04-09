@@ -33,15 +33,9 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     image = models.ImageField(null=True, blank=True, upload_to=upload_perfil_user)
     favorite = models.IntegerField(null=True, default=0)
-<<<<<<< HEAD
-    
-    
-=======
     category = models.ForeignKey(
         Category, related_name="posts", on_delete=models.CASCADE, null=True
     )
-
->>>>>>> 6a214b205146a312414758232b92226d7890f9a9
     class Meta:
         ordering = ("-created",)
 
@@ -61,9 +55,3 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-<<<<<<< HEAD
-
-
-    
-=======
->>>>>>> 6a214b205146a312414758232b92226d7890f9a9

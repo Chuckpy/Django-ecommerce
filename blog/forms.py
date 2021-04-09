@@ -3,7 +3,7 @@ from .models import Post
 
 
 class CreatePostForm(forms.ModelForm):
-<<<<<<< HEAD
+
     class Meta :
         model = Post        
 
@@ -12,11 +12,11 @@ class CreatePostForm(forms.ModelForm):
         "body",
         "image",
         ]
-=======
+
     class Meta:
         model = Post
         fields = ["title", "body", "image"]
->>>>>>> 6a214b205146a312414758232b92226d7890f9a9
+        
         widgets = {
             "title": forms.TextInput(
                 {
