@@ -7,8 +7,8 @@
 <div class="d-block w-100">
   <section>
     <img src="{% static 'images/hero/night.png' %}" id="night"> 
-    <img src="{% static 'images/hero/lua.png' %}" id="lua">         
-    <img src="{% static 'images/hero/hub.png' %}" id="hub">            
+    <img src="{% static 'images/hero/lua.png' %}" id="lua">        
+    <h2 class="hubtitle" font-style="" id="hub">Scientific and Philosophical Hub</h2>      
     <img src="{% static 'images/hero/git.png' %}" id="git">       
     <img src="{% static 'images/hero/montanhas.png' %}" id="montanhas">   
     <img style="z-index:200000 "src="{% static 'images/hero/forest.png' %}" id="forest">  
@@ -29,7 +29,7 @@
     montanhas.style.top = value * -(0.6) + 'px';    
     lua.style.left = value * -0.6 + 'px';
     forest.style.top = value * -(0.45) + 'px';     
-    git.style.top = value * 0.5 + 'px'; 
+    git.style.top = value * 0.21 + 'px'; 
     disc.style.top = value * 0.05 + 'px'; 
   })
   
@@ -46,9 +46,9 @@
 <!-- seção carrocel -->
 
 <div class="for_slick_slider multiple-items">
-  <div class="items"><img src="{% static 'images/hero.jpg' %}" alt="js" /></div>
-  <div class="items"><img src="{% static 'images/hero.jpg' %}" alt="java" /></div>
-  <div class="items"><img src="{% static 'images/hero.jpg' %}" alt="python"/></div>
+  <div class="items"><img src="{% static 'images/banner/banner-1.jpg' %}" alt="js" /></div>
+  <div class="items"><img src="{% static 'images/banner/banner-2.jpg' %}" alt="java" /></div>
+  <div class="items"><img src="{% static 'images/banner/banner-3.jpg' %}" alt="python"/></div>
   <div class="items"><img src="{% static 'images/hero.jpg' %}" alt="kotlin" /></div>
   <div class="items"><img src="{% static 'images/hero.jpg' %}" alt="scala" /></div>
   <div class="items"><img src="{% static 'images/hero.jpg' %}" alt="C#" /></div>
@@ -125,7 +125,10 @@
     </p>
     
 </div>
-</body>
+</body> 
+<div id="voltarTopo">
+	<a class="midle" href="#" id="subir">▲</a>
+</div>
 
 <footer class="bg-dark text-white">
     <div class="container py-4">

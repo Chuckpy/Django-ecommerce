@@ -6,8 +6,15 @@ $('.multiple-items').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1200,
+    autoplaySpeed: 1000,
     dots:true,
     centerMode:true,
     centerPadding:'10px',    
+  });
+
+  $(document).ready(function() {
+    $('#subir').click(function(){
+      $('html, body').animate({scrollTop:0}, 'slow');
+      return false;
+    });
   });
