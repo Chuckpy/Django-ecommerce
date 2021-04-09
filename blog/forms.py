@@ -3,7 +3,7 @@ from .models import Post
 
 class CreatePostForm(forms.ModelForm):
     class Meta :
-        model = Post
+        model = Post        
 
         fields = [            
         "title",

@@ -8,7 +8,9 @@
     <p>Você tem certeza que deseja sair?</p>
     <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
-        <button class="btn btn-danger" type="submit">Sim</button>        
+        <button class="btn btn-danger" type="submit">Sim</button>  
+        <a href="{% url 'pages:home' %}"><button class="btn btn-primary">Não, quero continuar</button></a> 
+             
     </form>
 </div>
 

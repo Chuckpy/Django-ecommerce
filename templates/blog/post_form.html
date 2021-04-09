@@ -3,15 +3,15 @@
 {% block title %} Criar meu post {% endblock title %}
 
 {% block content %}
-
+<div class="container">  
 <form class="bcreate" method="POST">
   <div class="">
-    <h2>Criar sua publicação</h2>
+    <h2 class="actitle">Criar sua publicação</h2>
     {{ form }}
     {% csrf_token %}
     
   <button type="submit" class="btn btn-success">Criar</button>
   </div>
-  </form>
-
+</form>
+</div>
 {% endblock %}

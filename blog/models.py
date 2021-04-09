@@ -15,6 +15,7 @@ class Post(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to=upload_perfil_user)
     favorite = models.IntegerField(null=True, default=0)
     
+    
     class Meta:
         ordering = ("-created",)
 
@@ -33,4 +34,6 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+
     
