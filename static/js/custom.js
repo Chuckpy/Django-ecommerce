@@ -18,3 +18,4 @@ $('.multiple-items').slick({
       return false;
     });
   });
+

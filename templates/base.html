@@ -27,15 +27,15 @@
       <!-- Esquerda navegador-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item "><a class="nav-link" href="{% url 'pages:home' %}">Principal <span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'products:list' %}">Produtos</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}">Sobre nós</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}">Blog</a></li>
+            <li class="nav-item "><a class="nav-link" href="{% url 'pages:home' %}"><p class="navtile">Principal</p></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'products:list' %}"><p class="navtile">Produtos</p></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}"><p class="navtile">Sobre nós</p></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}"><p class="navtile">Blog</p></a></li>
           </ul>
       <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
             {% if user.is_authenticated %}                
-            <li class="nav-item"><a class="nav-link espaco" href=""> Olá {{ user.username }} !</a></li>         
+            <li class="nav-item"><a class="nav-link espaco" href=""> <p class="navtile">Olá {{ user.username }} !</p></a></li>         
             
             <div class="btn-group espaco">
               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,14 +60,13 @@
                     {% else %}
                     (0)
                     {% endif %}
-                    {% endwith %}
-                  
+                    {% endwith %}                  
                 </a>
                 <a class="dropdown-item" href=""><i class="fas fa-heart"></i> Favoritos</a>
                 <a class="dropdown-item" href="#">Promoções</a>
               </div>
             </div>
-            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li class="nav-item"><a class="nav-link espaco" href="{% url 'account_logout' %}"><p class="navtile"><i class="fas fa-sign-out-alt"></i> Logout</p></a></li>
             <div>
               <input type="checkbox" onClick="save()" class="checkbox" id="chk" />
               <label class="label" for="chk">
@@ -109,7 +108,8 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous">      
+      crossorigin="anonymous">
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>      
     <script src="{% static 'js/darktheme.js' %}"></script>    
     <script src="{% static 'js/slick.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>

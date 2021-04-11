@@ -17,15 +17,16 @@ Produtos
     <div class="row">
         <div class="col-lg-3 op">            
             <h1 class="top-list">Loja do Hub</h1>
-            <h3>Categorias</h3>
+            <h3 align="center">Categorias</h3>
             <ul class="list-group mb-3 mb-lg-0 op">
-                <a class="text-decoration-none list-group-item list-group-item-light {% if not category %}active{% endif %}"
+                <a class="text-decoration-none list-group-item list-group-item-light  {% if not category %}active{% endif %}"
                     href="{% url 'products:list' %}">
+                    
                     Todos os produtos
                 </a>
 
                 {% for cat in categories %}
-                <a class="text-decoration-none list-group-item list-group-item-light {% if category == cat %}active{% endif %}"
+                <a class="text-decoration-none list-group-item list-group-item-light  {% if category == cat %}active{% endif %}"
                     href="{{ cat.get_absolute_url }}">
                     {{ cat.name }}
                 </a>

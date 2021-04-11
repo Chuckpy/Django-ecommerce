@@ -1,26 +1,36 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block title %}Sobre Nós{% endblock title %}
 
 {% block content %}
 
 <div class="container my-3">
-    <h1 align="center" class="font-weight-bold">Sobre nós</h1>
-    <p>
-      A busca pelo conhecimento é nosso âmago; contemplamos a aurora da busca do saber,
-       é o alvor de um mundo crítico, estão presentes prodigiosos, acadêmicos e iniciantes
-        na odisseia do conhecer, tendo em vista que compartilham o mesmo particípio solene:
-        o lampejo da amizade pela sabedoria. A dialética neste servidor goza da diferença
-        nas opiniões, principalmente nos debates e na política, que asseguramos sempre o
-        respeito e a educação. Sobretudo, o que mais podemos dizer é que no HCF, temos
-        rigor em priorização da ética e dos bons costumes, todo conhecimento será 
-        partilhado com gentileza. Cada pensamento, cada reflexão ilustra uma arte,
-        que representa todo nosso apreço, devido a isso, estão todos convidados, do 
-        que estão esperando? Afinal, este servidor é o reflexo do que os amantes das
-        ciências e filosofias sempre quiseram para esta plataforma. Este servidor 
-        jaz-te, junte-se ao dilúculo da criticidade!
-    </p>
-    
+    <h1 align="center" class="font-weight-bold">Sobre nós</h1>    
+    <div class="ab-img">
+        <ul style="list-style-type: none;">
+            <li><img src="{% static 'images/about/book.png' %}"><h2 class="ab-det">Conhecimento</h2>
+                <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+                     dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+    </li>
+            <li>
+    <img src="{% static 'images/about/brain.png' %}"><h2 class="ab-det"> Intelectualidade</h2>
+    <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+        dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="ab-img">
+        <ul style="list-style-type: none;"><li><img src="{% static 'images/about/balanca.png' %}"><h2 class="ab-det">Igualdade</h2>
+            <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+                dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+            </li>
+            <li><img src="{% static 'images/about/lamp.png' %}"><h2 class="ab-det"> Liberdade</h2>
+                <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+                    dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+            </li>
+        </ul>
+    </div>    
 </div>
 
 {% endblock content %}

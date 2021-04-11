@@ -1,9 +1,9 @@
 from django.views.generic import DetailView, ListView, CreateView
 from django.shortcuts import get_object_or_404
-
+from django.shortcuts import redirect
 from .models import Post, Comment, Category
 
-from .forms import CreatePostForm
+from .forms import CreatePostForm, CreateCommentForm
 
 
 class PostListView(ListView):
@@ -31,6 +31,20 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["comment_form"] = CreateCommentForm()
+        return context
+    
+    def post(self, request, **kwargs):
+        form = CreateCommentForm(request.POST)  
+        
+
+        if form.is_valid():
+            form.instance.post = self.get_object()
+            form.instance.author=request.user
+            form.save()
+        return redirect(request.path)
 
 class PostCreateView(CreateView):
     model = Post
@@ -39,7 +53,8 @@ class PostCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
-
 class CommentListView(ListView):
     model = Comment
+
+
+

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 
 class CreatePostForm(forms.ModelForm):
@@ -35,3 +35,12 @@ class CreatePostForm(forms.ModelForm):
             "body": "Texto da publicação :",
             "image": "Insira aqui a imagem dessa publicação",
         }
+
+class CreateCommentForm(forms.ModelForm):
+    class Meta :
+        model = Comment           
+
+        fields = ["body"]
+
+        widgets = {"body": forms.TextInput({"class": "form-control ", "rows": 3})}
+        labels = {"body": "Digite aqui seu comentário"}

@@ -2,7 +2,9 @@ from django.contrib import admin
 
 from payments.models import Payment
 
-from .models import Item, Order
+from .models import Item, Order, Review
+
+from products.models import Product
 
 
 class ItemInline(admin.TabularInline):
@@ -37,3 +39,14 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ["paid", "created", "modified"]
     search_fields = ["name", "email", "cpf"]
     inlines = [ItemInline, PaymentInline]
+
+    
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ["author", "body", "created", "updated","rating"]
+    list_filter = ["created","updated"]
+
+    #def formfield_for_foreignkey(self, db_field, request, **kwargs):
+     #   if db_field.name == "product":
+      #      kwargs["queryset"] = Product.objects.filter(name__in=self.get_form(request).instance.order.items)
+       # return super().formfield_for_foreignkey(db_field, request, **kwargs)

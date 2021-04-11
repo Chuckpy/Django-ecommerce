@@ -100,6 +100,10 @@ a:link {
     font-family: 'Bebas Neue', cursive;
 }
 
+.navtile {
+    margin:1px 1px !important;
+    font-size: 1em;
+}
 
 .active {
     background-color: #266fa0 !important;
@@ -193,11 +197,13 @@ section img {
 }
 
 .top-navg {
-    background-color: #2f5896;
+    background: rgb(60,231,85);
+    background: linear-gradient(90deg, rgba(60,231,85,1) 0%, rgba(0,255,190,1) 100%);
 }
 
 body.dark .top-navg{
-    background-color: #202324;
+    background: rgb(41,41,41);
+background: linear-gradient(90deg, rgba(41,41,41,1) 0%, rgba(13,13,13,1) 100%);
 }
 
 .checkbox {
@@ -279,6 +285,24 @@ body.dark .pagn{
     margin: 25px 25px;
     color: #f1f1f1;
 }
+.prod-dt-base{    
+    background-color:rgba(224, 224, 224, 0.63);
+    padding:10px 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;        
+    border-image-source: linear-gradient(to left, #10a510, #b0dd0d);
+    border-radius: 20px 0px 19px 0px;
+}
+body.dark .prod-dt-base{    
+    background-color:rgba(206, 206, 206, 0.096);
+    padding:10px 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;        
+    border-image-source: linear-gradient(to left, #3405b4, #c20d61);
+    border-radius: 20px 0px 19px 0px;
+}
 
 .prod-dt{
     border-width: 5px;
@@ -304,7 +328,6 @@ body.dark .prod-dt{
     text-shadow: #111;
     
 }
-
 .product-list { 
     margin-top:50px;
     border: 6px solid #4407b6;
@@ -410,17 +433,27 @@ body.dark .bcreate{
 .ctitle {
     text-align: center;    
 }
-
 .ccom{
-    width:30%;
+    display: inline-block;    
+    list-style-type: none;
+    width:29%;
     border-radius: 10px;
     background-color: #ffffff10;
-    border-bottom: 5px inset #9b37dd;
-    padding: 12px 18px;
-    margin: 25px 25px; 
-
+    border-bottom: 5px inset #6b10c0;
+    padding:13px 13px;
+    margin: 0px 10px; 
+    margin-top: 0px;
 }
+.eachcom{
+    font-size:1em;
+}
+
+.comtop{
+    margin-top:0px;
+}
+
 .cpub{    
+    display: inline;
     width:90%;
     border-radius: 10px;
     background-color: #ffffff10;
@@ -431,21 +464,22 @@ body.dark .bcreate{
 
 .titlep {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-decoration:none;
     color : #210699;
 }
 
 .post{
-    width:66%;
+    width:87%;
     border-radius: 10px;
     background-color: #ffffff15;
     border-bottom: 5px inset #9b37dd;
     padding: 12px 18px;
-    margin: 25px 25px;   
+    margin: 25px 25px;
+    
 }
 .post-detail{
-    width:66%;
+    width:90%;
     border-radius: 15px;
     background-color: #ffffff23;
     border: #111;
@@ -458,7 +492,8 @@ body.dark .bcreate{
     text-align: center;
     font-size: 2.5em;
     padding: 10px 25px;  background: rgb(116,231,60);
-    background: linear-gradient(90deg, rgba(116,231,60,1) 0%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(116,231,60,1) 100%);
+    margin-top:5px;
 }
 body.dark .post-title{
     text-align: center;
@@ -473,10 +508,8 @@ body.dark .post-title{
     padding: 10px 10px;
     margin: 25px 25px;   
 }
-
 .post-img {
-    width: 100%;
-    max-width: 100% ;
+    width:100%;
     border-radius: 7px;
 }
 
@@ -489,19 +522,39 @@ body.dark .post-title{
     font-size: 0.8em;
 }
 
+/* about */
+.ab-img{
+    margin-top: 75px;
+    align-items: center;
+    display: inline-block;
+    width: 45%;
+}
+
+.ab-det{
+    width:80%;
+    text-align: center;
+}
+
 /* accounts */
 .actitle{
     text-align: center;
     font-size:2.3em;
-    color: #111;
-
+    color: #111 !important;
 }
+
+.actext {
+    text-align: left;
+    font-size:1em;
+    color: #111 !important;
+    text-align: center;
+}
+
+
 
 .aclog {
     position:absolute;
     top:0px;
     left:200px;
-    color:black;
     padding:45px 60px;
     width:50%;
     align-items:center ;
@@ -509,12 +562,15 @@ body.dark .post-title{
     border-radius: 7px;    
     box-shadow: 10px 5px 15px rgba(29, 29, 29, 0.479);
     margin:100px 100px;
+    text-align: center;
 }
 /*Paginação*/
 .pagnt{
     background-color: #ffffff10;
 
 }
+
+
 /* Botão topo */
 
 #subir{    
@@ -539,3 +595,42 @@ body.dark .post-title{
     text-align: center;
     vertical-align: middle;
 }
+/* pagination */
+
+.pagination {
+    height: 36px;
+    margin: 18px 0;
+    color: #6c58bF;
+}
+
+.pagination a {
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    color: #6c58bF;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+}
+
+.pagination a:hover,
+.pagination .active a {
+    background-color: #6c58bF;
+    color: #ffffff;
+}
+
+.pagination a:focus {
+    background-color: #6c58bF;
+    color: #ffffff;
+}
+
+
+.pagination .active a {
+    color: #ffffff;
+    cursor: default;
+}
+
+.pagination>li.active>a {
+    background: purple;
+    color: #fff;
+  }

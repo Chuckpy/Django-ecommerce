@@ -14,7 +14,7 @@
             </h2>
             </div>
             <a href="{{ post.get_absolute_url }}">   
-            <div class="post-img container">            
+            <div class="container">            
             {% if post.image %}
                         <img src="{{ post.image.url }}" class="post-img" alt="{{ post.title }}">                            
                         {% else %}
@@ -28,8 +28,12 @@
             <div class="post-fav">
                 <p>
                 Favoritos <i class="fas heart fa-heart"></i>  ( {{ post.favorite }} )  
-                     Comentários <i class="fas fa-comment letter"></i> ( {{ post.comment_number }} )
+                Comentários <i class="fas fa-comment letter"></i> ( {{ post.comment_number }} )                               
                 </p>    
+                <a href="http://twitter.com/share" class="twitter-share-button"
+                data-url="{{ post.get_absolute_url }}" data-text="{{ post.title }}" 
+                data-count="horizontal" data-via="{{ user.username }}" data-lang="pt">Tweetar</a>
+                
             </div>            
         </article>
     </div>

@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="post-detail">
-    <div class="col-10">
+    <div class="col-12">
     <div>
     <h2 class="ptitle">{{ post.title }}</h2>
     </div>
@@ -19,27 +19,52 @@
         Publicado em {{ post.created }} por {{ post.author }}  
         <i class="fas heart fa-heart"></i> {{ post.favorite }}
     </p>
+    
     {{ post.body|linebreaks }}
+    <div class="btn-group espaco">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          comente
+        </button>
+        <div class="dropdown-menu drop">   
+          <a class="dropdown-item" >
+              {% if user.is_authenticated %}     
+            <form  method="POST">
+                {{ comment_form }} 
+                {% csrf_token %}
+                <button value="submit" class="btn btn-success">Comentar</button>
+            </form>
+            {% endif %}</a>  
+        </div>
+      </div>    
+    <a href="http://twitter.com/share" class="twitter-share-button" syle="width:60px; height:40px;"
+                data-url="{{ post.get_absolute_url }}" data-text="{{ post.title }}" 
+                data-count="horizontal" data-via="{{ user.username }}" data-lang="pt">Tweetar</a>
 </div>
 </div>
 
-{% for comment in post.comment_set.all %}
+
+<!--Comentarios-->
+{% if post.comment_set.all %}
 <div class="cpub">    
-    <h2 class="ctitle">Comentários:</h2>
-    <div class="ccom">    
-    <div>
+    <h2 class="ctitle"> {{ post.comment_number }} Comentários:</h2>    
+    <div class="comtop">       
+        {% for comment in post.comment_set.all %}
+    <ul class="ccom">        
+        <li>
         <h5>
             {{ comment.author }} comentou : 
         </h5>
-        <p>
+        <p class="eachcom">
             {{ comment.body }}
-        </p>
-        
+        </p>        
         <p class="cdate">
             Comentário feito em {{ comment.created }} por {{ comment.author }}
-        </p>
-    </div>    
+        </p></li>
+        
+    </ul>    
+    {% endfor %} 
 </div>    
 </div>
-{% endfor %} 
+{% endif %}
+
 {% endblock %}

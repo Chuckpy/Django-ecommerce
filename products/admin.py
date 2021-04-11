@@ -21,3 +21,5 @@ class ProductAdmin(admin.ModelAdmin):
     ]
     list_filter = ["is_available", "created", "modified"]
     list_editable = ["price", "is_available"]
+
+

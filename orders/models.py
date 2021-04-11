@@ -3,6 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from localflavor.br.models import BRCPFField, BRPostalCodeField, BRStateField
 from model_utils.models import TimeStampedModel
+from users.models import User
 
 from products.models import Product
 
@@ -54,3 +55,13 @@ class Item(models.Model):
 
     def get_total_price(self):
         return self.price * self.quantity
+
+class Review(models.Model):    
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField(max_length=200)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    rating = models.IntegerField(default=5,
+    validators=[MaxValueValidator(5), MinValueValidator(1)])
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
