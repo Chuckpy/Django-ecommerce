@@ -14,10 +14,10 @@
 ```
 git clone https://github.com/Chuckpy/Django-ecommerce.git
 ```
-- Dentro do repositório, agora local, você precisa criar um novo ambiente virtual. Seja ele qual for, oa próximo passo é acessa-lo e partir para a próxima etapa
+- Dentro do repositório, agora local, você precisa criar um novo ambiente virtual. Seja ele qual for, o próximo passo é acessa-lo e partir para a próxima etapa
 
 
-- Caso for rodar localmente, não deixe de, dentro do seu ambiente virual, instalar todas as bibliotecas necessárias :
+- Caso for rodar localmente, não deixe de, dentro do seu ambiente virtual, instalar todas as bibliotecas necessárias :
 ```
 pip install -r requirements.txt
 ```
@@ -51,7 +51,8 @@ Por fim, acesse o site neste link: [http://localhost:8000/](http://localhost:800
 
 Caso haja alguma duvida, ou precisar de ajuda, sinta-se livre para perguntar :
 
-- [Marcus Vinicius] (https://twitter.com/MarcusV92211788)
+- [Marcus Vinicius](https://twitter.com/MarcusV92211788)
+
 Ps : Posso demorar um pouco para responder
  
 
