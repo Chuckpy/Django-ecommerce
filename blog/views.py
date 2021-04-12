@@ -9,7 +9,7 @@ from .forms import CreatePostForm, CreateCommentForm
 class PostListView(ListView):
     model = Post
     category = None
-    paginate_by = 9
+    paginate_by = 7
 
     def get_queryset(self):
         queryset = Post.objects.all()

@@ -21,7 +21,7 @@ class Category(TimeStampedModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("posts:list_by_category", kwargs={"slug": self.slug})
+        return reverse("blog:list_by_category", kwargs={"slug": self.slug})
 
 
 class Post(models.Model):
