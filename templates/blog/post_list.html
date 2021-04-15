@@ -1,10 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}{% endblock %}
+{% block title %}Blog{% endblock %}
 {% block content %}
-<h2 class="post-title">Publicações</h2>
+
+
+<div >
+
+<h2 class="post-title">Publicações </h2>
+<!--
+<div class="btn-group">
+    <button type="button" class="btn btn-outline-success dropdown-toggle  cat-blog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Categorias
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">   
+      <li><a class="dropdown-item" href="{% url 'blog:list' %}">Todos as publicações </a></li>
+      
+      {% for cat in categories %}
+      <li><a class="dropdown-item" href="{{ cat.get_absolute_url }}">
+          {{ cat.name }}
+      </a></li>
+      
+      {% endfor %}
+    </ul>
+</div>
+-->
     {% for post in post_list %}
-    <div class="post">
+    <div class="col-lg-9 post">
         <article class= "">
             <div class="titlep">
             <h2 class = "titlep">
@@ -33,14 +54,21 @@
                 <a href="http://twitter.com/share" class="twitter-share-button"
                 data-url="{{ post.get_absolute_url }}" data-text="{{ post.title }}" 
                 data-count="horizontal" data-via="{{ user.username }}" data-lang="pt">Tweetar</a>
-                
+                <div class="fb-share-button" 
+                data-href="{{ post.get_absolute_url }}" 
+                data-layout="button_count">
+                </div>
+
             </div>            
         </article>
     </div>
     
     {% endfor %}
     <div id="voltarTopo">
-        <a class="midle" href="#" id="subir">▲</a>
+        <a class="midle" href="" id="subir">▲</a>
     </div>
-    
+</div>
+{% if is_paginated %}
+            {% include "pagination.html" with page=page_obj %}
+    {% endif %}
 {% endblock %}

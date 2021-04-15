@@ -23,7 +23,7 @@
     {{ post.body|linebreaks }}
     <div class="btn-group espaco">
         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          comente
+          Comente
         </button>
         <div class="dropdown-menu drop">   
           <a class="dropdown-item" >
@@ -31,40 +31,54 @@
             <form  method="POST">
                 {{ comment_form }} 
                 {% csrf_token %}
-                <button value="submit" class="btn btn-success">Comentar</button>
+                <button value="submit" class="btn btn-success">Enviar</button>
             </form>
-            {% endif %}</a>  
+            {% else %}
+            <p class="warning">Você precisa estar logado para comentar aqui</p>
+            {% endif %}
+        </a>  
         </div>
-      </div>    
+      </div>   
+    <div>
     <a href="http://twitter.com/share" class="twitter-share-button" syle="width:60px; height:40px;"
                 data-url="{{ post.get_absolute_url }}" data-text="{{ post.title }}" 
                 data-count="horizontal" data-via="{{ user.username }}" data-lang="pt">Tweetar</a>
+    </div> 
+    <div class="fb-share-button" data-href="{{ post.get_absolute_url }}" 
+                data-layout="button_count">
+    </div>
 </div>
 </div>
 
 
 <!--Comentarios-->
 {% if post.comment_set.all %}
-<div class="cpub">    
-    <h2 class="ctitle"> {{ post.comment_number }} Comentários:</h2>    
-    <div class="comtop">       
+
+<div class="container">
+	<div class="row">
+        <h2 class="ctitle"> {{ post.comment_number }} Comentários:</h2>
+		<div class="MultiCarousel" data-items="1,3" data-slide="1"
+         id="MultiCarousel"  data-interval="10">
+            <div class="MultiCarousel-inner">                
         {% for comment in post.comment_set.all %}
-    <ul class="ccom">        
-        <li>
-        <h5>
-            {{ comment.author }} comentou : 
-        </h5>
-        <p class="eachcom">
-            {{ comment.body }}
-        </p>        
-        <p class="cdate">
-            Comentário feito em {{ comment.created }} por {{ comment.author }}
-        </p></li>
-        
-    </ul>    
+                <div class="item" >
+                    <div class="pad15">
+                        <p class="lead">{{ comment.author }} comentou : </p>
+                        <p class="comlead"> " {{ comment.body }} "</p>
+                        <p class="lead">Comentário feito em {{ comment.created }}</p>                        
+                    </div>
+                </div>                
     {% endfor %} 
-</div>    
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+        </div>
+	</div>
 </div>
 {% endif %}
 
+
+{% block script %}
+<script src="{% static 'js/boot-slider.js' %}"></script>
+{% endblock script %}
 {% endblock %}

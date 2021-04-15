@@ -19,3 +19,9 @@ $('.multiple-items').slick({
     });
   });
 
+
+  $("a.page-link").each(function(){
+    if ($(this).attr("data-page")== window.location.search.replace("?page=","")){
+        $ (this).addClass("active")
+    }
+})
