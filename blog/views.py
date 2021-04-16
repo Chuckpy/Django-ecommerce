@@ -1,7 +1,7 @@
 from django.views.generic import DetailView, ListView, CreateView
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
-from .models import Post, Comment, Category
+from .models import Post, Comment, Category, Favorite
 
 from .forms import CreatePostForm, CreateCommentForm
 
@@ -9,7 +9,7 @@ from .forms import CreatePostForm, CreateCommentForm
 class PostListView(ListView):
     model = Post
     category = None
-    paginate_by = 7
+    paginate_by = 6
 
     def get_queryset(self):
         queryset = Post.objects.all()
@@ -56,5 +56,7 @@ class PostCreateView(CreateView):
 class CommentListView(ListView):
     model = Comment
 
+class Favorite(CreateView):
+    model = Favorite
 
-
+    

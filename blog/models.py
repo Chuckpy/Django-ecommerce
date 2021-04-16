@@ -11,7 +11,6 @@ from .utils import upload_perfil_user
 class Category(TimeStampedModel):
     name = models.CharField(max_length=255, unique=True)
     slug = AutoSlugField(unique=True, always_update=False, populate_from="name")
-
     class Meta:
         ordering = ("name",)
         verbose_name = "category"
@@ -31,8 +30,7 @@ class Post(models.Model):
     body = models.TextField(max_length=1050)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    image = models.ImageField(null=True, blank=True, upload_to=upload_perfil_user)
-    favorite = models.IntegerField(null=True, default=0)
+    image = models.ImageField(null=True, blank=True, upload_to=upload_perfil_user)   
     category = models.ForeignKey(
         Category, related_name="posts", on_delete=models.CASCADE, null=True
     )
@@ -55,3 +53,11 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+class Favorite(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)    
+    created = models.DateTimeField(auto_now_add=True) 
+
+    class Meta :
+        constraints = (models.UniqueConstraint(fields=['author_id', 'post_id'], name='unique_favorite'),)
