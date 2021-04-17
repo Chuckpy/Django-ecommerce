@@ -1,11 +1,9 @@
 from django.views.generic import DetailView, ListView, CreateView
-from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect
+from django.views import View
+from django.shortcuts import redirect, get_object_or_404
 from .models import Post, Comment, Category, Favorite
 
 from .forms import CreatePostForm, CreateCommentForm
-
-
 class PostListView(ListView):
     model = Post
     category = None
@@ -26,8 +24,6 @@ class PostListView(ListView):
         context["category"] = self.category
         context["categories"] = Category.objects.all()
         return context
-
-
 class PostDetailView(DetailView):
     model = Post
 
@@ -39,7 +35,6 @@ class PostDetailView(DetailView):
     def post(self, request, **kwargs):
         form = CreateCommentForm(request.POST)  
         
-
         if form.is_valid():
             form.instance.post = self.get_object()
             form.instance.author=request.user
@@ -56,7 +51,26 @@ class PostCreateView(CreateView):
 class CommentListView(ListView):
     model = Comment
 
-class Favorite(CreateView):
-    model = Favorite
+class FavoriteView(View):
 
-    
+    def post(self,request):
+
+        user = request.user
+        post_id = request.POST.get("post_id")
+        post_obj = Post.objects.get(id=post_id)
+            
+        if user in post_obj.favorite.all():
+                post_obj.favorite.remove(user)
+        else :
+                post_obj.favorite.add(user)
+
+        favorite, created = Favorite.objects.get_or_create(author = user, post_id=post_id)
+
+        if not created:
+            if favorite.value == "Favoritar":
+                favorite.value = "Desfavoritar"
+            else:
+                favorite.value = "Favoritar"
+        favorite.save()
+
+        return redirect(post_obj.get_absolute_url())

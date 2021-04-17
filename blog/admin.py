@@ -2,10 +2,9 @@ from django.contrib import admin
 
 from .models import Post, Comment, Category, Favorite
 
-
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug", "author", "created", "updated")
+    list_display = ("title", "slug", "author", "created", "updated", )
 
 
 @admin.register(Comment)
@@ -19,4 +18,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Favorite)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ("author", "post", "created")
+    list_display = ("author", "post", "value","created", "updated")
