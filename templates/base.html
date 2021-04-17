@@ -27,15 +27,15 @@
       <!-- Esquerda navegador-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item "><a class="nav-link" href="{% url 'pages:home' %}"><p class="navtile">Principal</p></a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'products:list' %}"><p class="navtile">Produtos</p></a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}"><p class="navtile">Sobre nós</p></a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}"><p class="navtile">Blog</p></a></li>
+            <li class="nav-item "><span class = "linkmation"><a class="nav-link" href="{% url 'pages:home' %}"><p class="navtile">Principal</p></a></span></li>
+            <li class="nav-item"><span class = "linkmation"><a class="nav-link" href="{% url 'products:list' %}"><p class="navtile">Produtos</p></a></span></li>
+            <li class="nav-item"><span class = "linkmation"><a class="nav-link" href="{% url 'pages:about' %}"><p class="navtile">Sobre nós</p></a></span></li>
+            <li class="nav-item"><span class = "linkmation"><a class="nav-link" href="{% url 'blog:list' %}"><p class="navtile">Blog</p></a></span></li>
           </ul>
       <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
             {% if user.is_authenticated %}                
-            <li class="nav-item"><a class="nav-link espaco" href=""> <p class="navtile">Olá {{ user.username }} !</p></a></li>         
+            <li class="nav-item nav-link espaco"><a href="{% url 'users:profile' %}"> <p class="navtile">Olá {{ user.username }} !</p></a></li>         
             
             <div class="btn-group espaco">
               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,8 +70,8 @@
             <div>
               <input type="checkbox" onClick="save()" class="checkbox" id="chk" />
               <label class="label" for="chk">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
+                <p class="navtile"><i class="fas fa-moon"></i></p>
+                <p class="navtile"><i class="fas fa-sun"></i></p>                
                 <div class="ball"></div>
               </label>
             </div>

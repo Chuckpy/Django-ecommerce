@@ -1,19 +1,27 @@
-from django.contrib.auth import forms
-from .models import User
+
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from .models import Profile, User
 
 
-class UserChangeForm(forms.UserChangeForm):
-    class Meta(forms.UserChangeForm.Meta):
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
+    class Meta:
         model = User
+        fields = ['username', 'email','first_name','last_name', 'password1', 'password2']
 
 
-class UserCreationForm(forms.UserCreationForm):
-    class Meta(forms.UserCreationForm.Meta):
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+    class Meta:
         model = User
-        fields = [
-            "username",
-            "first_name",
-            "last_name",
-            "email",
-                    ]
+        fields = ['username', 'email']
 
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
+
+
+        labels = {'image':'Coloque aqui sua foto de perfil'}
