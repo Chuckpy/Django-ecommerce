@@ -24,4 +24,9 @@ $('.multiple-items').slick({
     if ($(this).attr("data-page")== window.location.search.replace("?page=","")){
         $ (this).addClass("active")
     }
-})
+});
+
+/* fade preloader */
+$(window).on("load",function(){
+  $(".loader-wrapper").fadeOut("slow");
+});

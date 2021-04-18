@@ -3,13 +3,13 @@
 {% block title %}Blog{% endblock %}
 {% block content %}
 
-
-<div >
-
-<h2 class="post-title">Publicações </h2>
-<!--
+<div>    
+    <div class="loader-wrapper" style="z-index:200001">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 <div class="btn-group">
-    <button type="button" class="btn btn-outline-success dropdown-toggle  cat-blog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="gradient-button gradient-button-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
      Categorias
     </button>
     <ul class="dropdown-menu dropdown-menu-dark">   
@@ -23,9 +23,10 @@
       {% endfor %}
     </ul>
 </div>
--->
+
     {% for post in post_list %}
-    <div class="col-lg-9 post">
+<div class="col-9">
+    <div class="post">
         <article class= "">
             <div class="titlep">
             <h2 class = "titlep">
@@ -37,37 +38,52 @@
             <a href="{{ post.get_absolute_url }}">   
             <div class="container">            
             {% if post.image %}
-                        <img src="{{ post.image.url }}" class="post-img" alt="{{ post.title }}">                            
-                        {% else %}
-                        <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="Post">
-                        {% endif %}
+                <img src="{{ post.image.url }}" class="post-img" alt="{{ post.title }}">                            
+                {% else %}
+                <img src="{% static 'images/no_image.jpg' %}" class="post-img" alt="{{ post.title }}">
+                {% endif %}
             </div>
         </a><p class="date">
             Publicado em {{ post.created }} por {{ post.author }}
-            </p>                       
+            </p><img class="rounded-circle" src='{{ post.author.profile.image.url }}'>                     
             {{ post.body|linebreaks|truncatewords:15 }}
-            <div class="post-fav">
-                <p>
-                Favoritos <i class="fas heart fa-heart"></i>  ( {{ post.favorite }} )  
-                Comentários <i class="fas fa-comment letter"></i> ( {{ post.comment_number }} )                               
-                </p>    
-                <a href="http://twitter.com/share" class="twitter-share-button"
-                data-url="{{ post.get_absolute_url }}" data-text="{{ post.title }}" 
-                data-count="horizontal" data-via="{{ user.username }}" data-lang="pt">Tweetar</a>
-                <div class="fb-share-button" 
-                data-href="{{ post.get_absolute_url }}" 
-                data-layout="button_count">
-                </div>
-
+            <div class="post-fav">         
+                
+                <button type="button" class="btn btn-outline-primary btn-floating btn-com">
+                    <i class="fas fa-comment letter"></i>
+                </button>   
+                
+                <form action="{% url 'blog:favorite' %}" method="POST" >
+                    {% csrf_token %}
+                    <input type="hidden" name='post_id' value="{{ post.id }}">
+                    {% if user not in post.favorite.all %}
+                    
+                    <button class="btn btn-outline-danger" type="submit"> 
+                        <svg class="ico-heart liked" width="54" height="54" viewBox="0 0 24 24">
+                            <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+                        </svg></button> 
+                    {% else %}
+                        <button class="btn btn-outline-danger" type="submit"> 
+                            <svg class="ico-heart" width="34" height="34" viewBox="0 0 24 24">
+                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+                            </svg></button>
+                    {% endif %}
+                </form>   
+                <p>{{ post.favorite.all.count }} Favoritos</p>
+                <p> {{ post.comment_number }} Comentários</p> 
             </div>            
         </article>
     </div>
-    
+</div>
     {% endfor %}
     <div id="voltarTopo">
         <a class="midle" href="" id="subir">▲</a>
     </div>
 </div>
+
+
+
+
 {% if is_paginated %}
             {% include "pagination.html" with page=page_obj %}
     {% endif %}

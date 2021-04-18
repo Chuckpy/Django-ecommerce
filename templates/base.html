@@ -22,15 +22,15 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" 
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'pages:home' %}">Hub</a>
+          </button>          
+          <a class="navbar-brand" href="{% url 'pages:home' %}"><h4>Hub</h4></a>        
       <!-- Esquerda navegador-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item "><span class = "linkmation"><a class="nav-link" href="{% url 'pages:home' %}"><p class="navtile">Principal</p></a></span></li>
-            <li class="nav-item"><span class = "linkmation"><a class="nav-link" href="{% url 'products:list' %}"><p class="navtile">Produtos</p></a></span></li>
-            <li class="nav-item"><span class = "linkmation"><a class="nav-link" href="{% url 'pages:about' %}"><p class="navtile">Sobre nós</p></a></span></li>
-            <li class="nav-item"><span class = "linkmation"><a class="nav-link" href="{% url 'blog:list' %}"><p class="navtile">Blog</p></a></span></li>
+            <li class="nav-item "><a class="nav-link" href="{% url 'pages:home' %}"><p class="navtile nav-c">Principal</p></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'products:list' %}"><p class="navtile nav-c">Produtos</p></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pages:about' %}"><p class="navtile nav-c">Sobre nós</p></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'blog:list' %}"><p class="navtile nav-c">Blog</p></a></li>
           </ul>
       <!-- Direita navegador-->
           <ul class="navbar-nav ml-auto">            
@@ -113,7 +113,7 @@
     <script src="{% static 'js/darktheme.js' %}"></script>    
     <script src="{% static 'js/slick.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
-    
+    <script src="{% static 'js/index.js' %}"></script>
 
     {% block script %}
     {% endblock script %}

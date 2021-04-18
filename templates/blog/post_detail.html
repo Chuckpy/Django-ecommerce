@@ -16,12 +16,28 @@
                     {% endif %}
     </div>                           
     <p class="date">
-        Publicado em {{ post.created }} por {{ post.author }}  
-        <i class="fas heart fa-heart"></i> {{ post.favorite }}
-    </p>
-    
+        Publicado em {{ post.created }} por {{ post.author }}       
+    </p>    
     {{ post.body|linebreaks }}
+    <form action="{% url 'blog:favorite' %}" method="POST" >
+        {% csrf_token %}
+        <input type="hidden" name='post_id' value="{{ post.id }}">
+        {% if user not in post.favorite.all %}
+        
+        <button class="btn btn-outline-danger" type="submit"> 
+            <svg class="ico-heart" width="54" height="54" viewBox="0 0 24 24">
+                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+            </svg></button> 
+        {% else %}
+            <button class="btn btn-outline-danger" type="submit"> 
+                <svg class="ico-heart liked" width="54" height="54" viewBox="0 0 24 24">
+                    <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+                </svg></button>
+        {% endif %}
+    </form> 
+    <p>{{ post.favorite.all.count }} Favoritos</p>
     <div class="btn-group espaco">
+
         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Comente
         </button>
@@ -39,14 +55,7 @@
         </a>  
         </div>
       </div>   
-    <div>
-    <a href="http://twitter.com/share" class="twitter-share-button" syle="width:60px; height:40px;"
-                data-url="{{ post.get_absolute_url }}" data-text="{{ post.title }}" 
-                data-count="horizontal" data-via="{{ user.username }}" data-lang="pt">Tweetar</a>
-    </div> 
-    <div class="fb-share-button" data-href="{{ post.get_absolute_url }}" 
-                data-layout="button_count">
-    </div>
+    
 </div>
 </div>
 
@@ -54,7 +63,7 @@
 <!--Comentarios-->
 {% if post.comment_set.all %}
 
-<div class="container">
+<div id = "comments" class="container">
 	<div class="row">
         <h2 class="ctitle"> {{ post.comment_number }} Comentários:</h2>
 		<div class="MultiCarousel" data-items="1,3" data-slide="1"
@@ -71,7 +80,7 @@
     {% endfor %} 
             </div>
             <button class="btn btn-primary leftLst"><</button>
-            <button class="btn btn-primary rightLst">></button>
+            <button class="btn btn-primary rightLst"">></button>
         </div>
 	</div>
 </div>

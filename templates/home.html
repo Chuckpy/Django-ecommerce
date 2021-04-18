@@ -3,32 +3,38 @@
 {% block title %}Scientific Hub {% endblock %}
 {% block content %}
 
-<body>
-  
+<body>  
+  <div class="loader-wrapper" style="z-index:200001">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
 <!-- Banner -->
 <div class="d-block w-100">
-  <section>
-    <img src="{% static 'images/hero/night.png' %}" id="night"> 
-    <img src="{% static 'images/hero/lua.png' %}" id="lua">        
-    <h2 class="hubtitle" font-style="" id="hub">Scientific and Philosophical Hub</h2>      
-    <img src="{% static 'images/hero/git.png' %}" id="git">       
-    <img src="{% static 'images/hero/montanhas.png' %}" id="montanhas">   
-    <img style="z-index:200000 "src="{% static 'images/hero/forest.png' %}" id="forest">  
+  <section>   
+    <img class='dia' src="{% static 'images/hero/dia.png' %}" id="dia">     
+    <img class="sol" src="{% static 'images/hero/sol.png' %}" id="sol">  
+    <img class= "lua" style="z-index: 2" src="{% static 'images/hero/lua.png' %}" id="lua">        
+    <h2  class="hubtitle" font-style="" id="hub">Scientific and Philosophical Hub</h2>      
+    <img style="z-index:2" src="{% static 'images/hero/git.png' %}" id="git"> 
+    <img style="z-index:5" src="{% static 'images/hero/montanhas.png' %}" id="montanhas"> 
+    <img class="mont" style="z-index:5" src="{% static 'images/hero/montanhas-dia.png' %}" id="montanhas-d">  
+    <img style="z-index:200000" src="{% static 'images/hero/forest.png' %}" id="forest">  
   </section>
   <script type="text/javascript">
-  let night = document.getElementById("night")
+  let sol = document.getElementById("sol")  
   let lua = document.getElementById("lua")
   let hub = document.getElementById("hub")
   let montanhas = document.getElementById("montanhas")
+  let montanhasd = document.getElementById("montanhas-d")
   let forest = document.getElementById("forest")
   let git = document.getElementById("git")  
 
   window.addEventListener('scroll', function(){
     var value = window.scrollY;
-    hub.style.top = value * 0.4 + 'px';
-    night.style.top = value * -1.6 + 'px';    
-    montanhas.style.top = value * -(0.6) + 'px';    
+    hub.style.top = value * 0.4 + 'px';    
+    montanhas.style.top = value * -(0.8) + 'px'; 
+    montanhasd.style.top = value * -(0.8) + 'px';    
     lua.style.left = value * -0.6 + 'px';
+    sol.style.left = value * -0.6 + 'px';
     forest.style.top = value * -(0.45) + 'px';     
     git.style.top = value * 0.6 + 'px'; 
     disc.style.top = value * 0.05 + 'px'; 
