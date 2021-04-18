@@ -42,5 +42,5 @@ class CreateCommentForm(forms.ModelForm):
 
         fields = ["body"]
 
-        widgets = {"body": forms.TextInput({"class": "form-control ", "rows": 3})}
+        widgets = {"body": forms.TextInput({"class": "form-control comentbar", "rows": 6})}
         labels = {"body": "Digite aqui seu comentário"}
